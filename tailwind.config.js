@@ -18,10 +18,12 @@ module.exports = {
       colors: {
         white: "#FFFFFF",
         black: "#333333",
-        primary: "#8247E5"
+        primary: "#8247E5",
+        gray1: "#B0B3B5",
       },
       borderRadius: {
-        '4xl': '1.875rem'
+        '4xl': '1.875rem',
+        '5xl': '3.125rem',
       },
       height: {
         '55px': '3.4375rem'
