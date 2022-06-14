@@ -16,6 +16,10 @@ module.exports = {
       },
       height: {
         '55px': '3.4375rem'
+      },
+      fontFamily: {
+        Gilroy: "'Gilroy', sans-serif",
+        Montserrat: "'Montserrat', sans-serif"
       }
     },
   },
