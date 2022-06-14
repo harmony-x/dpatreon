@@ -1,0 +1,10 @@
+import { SVGProps } from "react";
+
+export default function LandingPageConnect(props: SVGProps<SVGSVGElement>): JSX.Element {
+  return (
+    <svg {...props} width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M29.3453 22.6547C27.5706 20.8807 25.164 19.8841 22.6546 19.8841C20.1453 19.8841 17.7387 20.8807 15.964 22.6547L9.27114 29.3453C7.49638 31.1201 6.49933 33.5272 6.49933 36.0371C6.49933 38.547 7.49638 40.9541 9.27114 42.7288C11.0459 44.5036 13.453 45.5007 15.9629 45.5007C18.4728 45.5007 20.8799 44.5036 22.6546 42.7288L26 39.3835" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M22.6547 29.3453C24.4294 31.1193 26.836 32.1159 29.3453 32.1159C31.8547 32.1159 34.2613 31.1193 36.036 29.3453L42.7288 22.6547C44.5036 20.8799 45.5006 18.4728 45.5006 15.9629C45.5006 13.453 44.5036 11.0459 42.7288 9.27117C40.9541 7.49641 38.547 6.49936 36.0371 6.49936C33.5272 6.49936 31.1201 7.49641 29.3453 9.27117L26 12.6165" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
