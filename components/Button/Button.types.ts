@@ -4,5 +4,6 @@ export type ButtonProps = {
   onClick: () => void,
   disabled?: boolean,
   className?: string,
-  height: string
+  height: string,
+  px: string,
 }
