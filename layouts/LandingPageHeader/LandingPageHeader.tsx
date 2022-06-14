@@ -5,7 +5,7 @@ import { FC } from "react";
 
 const LandingPageHeader : FC = ({}) => {
   return (
-    <header className="px-12 lg:px-24 py-6 lg:py-9 flex flex-col md:flex-row justify-between items-center">
+    <header className="py-6 lg:py-9 flex flex-col md:flex-row justify-between items-center">
       <Link href="/">
         <a>
           <LandingPageLogo />
@@ -17,7 +17,7 @@ const LandingPageHeader : FC = ({}) => {
             Curate a content-
           </a>
         </Link>
-        <Button height='h-12 md:h-55px' onClick={() => {}} text='Connect Wallet' type='secondary'  />
+        <Button px="px-4 md:px-6" height='h-12 md:h-55px' onClick={() => {}} text='Connect Wallet' type='secondary'  />
       </nav>
     </header>
   )
