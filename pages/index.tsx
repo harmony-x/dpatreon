@@ -1,3 +1,5 @@
+import Button from '$components/Button/Button'
+import LandingPageHeader from '$layouts/LandingPageHeader/LandingPageHeader'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
@@ -10,10 +12,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="bg-slate-500 text-3xl font-bold underline">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <main className='bg-black font-Gilroy lg3:container mx-auto'>
+        <LandingPageHeader />
       </main>
     </div>
   )
