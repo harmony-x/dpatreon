@@ -15,6 +15,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "$hooks/*": ["hooks/*"],
+      "$types/*": ["types/*"],
+      "$utils/*": ["utils/*"],
+      "$layouts/*": ["layouts/*"],
+      "$screens/*": ["screens/*"],
+      "$svgs/*": ["assets/svgs/*"],
+      "$components/*": ["components/*"],
+      "$pages/*": ["pages/*"],
+    },
     "incremental": true
   },
   "include": ["./scripts", "./test", "./typechain", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
