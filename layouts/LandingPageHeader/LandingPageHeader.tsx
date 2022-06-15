@@ -1,9 +1,13 @@
 import Button from "$components/Button/Button";
 import LandingPageLogo from "assets/svg/landing_page_logo";
 import Link from "next/link";
-import { FC } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 
-const LandingPageHeader : FC = ({}) => {
+interface LandingPageHeaderProps {
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const LandingPageHeader : FC<LandingPageHeaderProps> = ({setIsOpen}) => {
   return (
     <header className="py-6 lg:py-9 flex flex-col md:flex-row justify-between items-center">
       <Link href="/">
@@ -17,7 +21,7 @@ const LandingPageHeader : FC = ({}) => {
             Curate a content-
           </a>
         </Link>
-        <Button px="px-4 md:px-6" height='h-12 md:h-55px' onClick={() => {}} text='Connect Wallet' type='secondary'  />
+        <Button px="px-4 md:px-6" height='h-12 md:h-55px' onClick={() => {setIsOpen(true)}} text='Connect Wallet' type='secondary'  />
       </nav>
     </header>
   )
