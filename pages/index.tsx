@@ -1,12 +1,14 @@
-import Button from '$components/Button/Button'
+import ConnectWallet from '$components/ConnectWallet/ConnectWallet'
 import Footer from '$layouts/Footer/Footer'
 import LandingPageHeader from '$layouts/LandingPageHeader/LandingPageHeader'
 import LandingPageHero from '$layouts/LandingPageHero/LandingPageHero'
 import LandingPageHowTo from '$layouts/LandingPageHowTo/LandingPageHowTo'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useState } from 'react'
 
 const Home: NextPage = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   return (
     <div className='bg-dark3 min-h-screen'>
       <Head>
@@ -16,12 +18,14 @@ const Home: NextPage = () => {
       </Head>
 
       <main className='font-Gilroy lg3:container mx-auto px-6 md:px-12 lg:px-24'>
-        <LandingPageHeader />
-        <LandingPageHero />
+          <LandingPageHeader setIsOpen={setIsOpen} />
+          <LandingPageHero />
+          {/* <div className=''></div> */}
         <LandingPageHowTo />
         <div className='w-full mt-16 bg-dark2 h-96 lg2:h-600px'></div>
       </main>
       <Footer theme={{fill: "white", text1: "text-white", text2: "text-white"}} />
+      <ConnectWallet isOpen={isOpen} setIsOpen={setIsOpen}/>
     </div>
   )
 }
