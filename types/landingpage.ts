@@ -6,9 +6,3 @@ export type HowtoCardDataType = {
   title: string,
   description: string,
 }
-
-export type LinkList = {
-  name: string,
-  link: string,
-  id: number
-}

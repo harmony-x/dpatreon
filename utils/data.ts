@@ -1,5 +1,5 @@
-import { ChoiceCardType } from "$types/global";
-import { HowtoCardDataType, LinkList } from "$types/landingpage";
+import { ChoiceCardType, LinkList } from "$types/global";
+import { HowtoCardDataType } from "$types/landingpage";
 import LandingPageConnect from "$svg/landing_page_connect";
 import Polygon from "$svg/polygon";
 import BinanceChain from "$svg/binance_chain";
