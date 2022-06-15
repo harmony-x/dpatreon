@@ -21,7 +21,7 @@ const Home: NextPage = () => {
         <LandingPageHowTo />
         <div className='w-full mt-16 bg-dark2 h-96 lg2:h-600px'></div>
       </main>
-      <Footer theme='white' />
+      <Footer theme={{fill: "white", text1: "text-white", text2: "text-white"}} />
     </div>
   )
 }
