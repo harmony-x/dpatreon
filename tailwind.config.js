@@ -21,18 +21,27 @@ module.exports = {
         primary: "#8247E5",
         gray1: "#B0B3B5",
         gray2: "#4F5254",
-        dark: "#1E1E1E"
+        dark: "#1E1E1E",
+        dark2: "#141414",
+        dark3: "#0C0C0C",
+        dark4: "#0A0A0A",
+        footerBorderColor: "rgb(189, 189, 189)"
       },
       borderRadius: {
+        'xs': '0.03125rem',
         '4xl': '1.875rem',
         '5xl': '3.125rem',
       },
       height: {
-        '55px': '3.4375rem'
+        '55px': '3.4375rem',
+        '600px': '37.5rem'
       },
       fontFamily: {
         Gilroy: "'Gilroy', sans-serif",
         Montserrat: "'Montserrat', sans-serif"
+      },
+      borderWidth: {
+        'xs': '0.03125rem'
       }
     },
   },
