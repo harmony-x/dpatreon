@@ -1,5 +1,12 @@
+import { ChoiceCardType } from "$types/global";
 import { HowtoCardDataType, LinkList } from "$types/landingpage";
-import LandingPageConnect from "assets/svg/landing_page_connect";
+import LandingPageConnect from "$svg/landing_page_connect";
+import Polygon from "$svg/polygon";
+import BinanceChain from "$svg/binance_chain";
+import Ethereum from "$svg/ethereum";
+import Metamask from "$png/metamask";
+import Coinbase1 from "$png/coinbase1";
+import Coinbase2 from "$svg/coinbase2";
 
 export const howtoData : HowtoCardDataType[] = [
   {
@@ -55,5 +62,37 @@ export const footerDataTwo : LinkList[] = [
     name: 'Privacy Policy',
     link: '/',
     id: 3
+  }
+]
+
+export const networkOptions : ChoiceCardType[] = [
+  {
+    icon: Polygon(),
+    title: 'Polygon',
+  },
+  {
+    icon: BinanceChain(),
+    title: 'Binance Chain',
+    disabled: true
+  },
+  {
+    icon: Ethereum(),
+    title: 'Ethereum',
+    disabled: true
+  }
+]
+
+export const walletOptions : ChoiceCardType[] = [
+  {
+    icon: Metamask(),
+    title: 'Metamask',
+  },
+  {
+    icon: Coinbase1(),
+    title: 'Coinbase Wallet',
+  },
+  {
+    icon: Coinbase2(),
+    title: 'Coinbase Wallet',
   }
 ]
