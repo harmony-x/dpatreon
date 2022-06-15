@@ -3,8 +3,9 @@ import SectionHeading from "$components/LandingPage/SectionHeading/SectionHeadin
 import SearchBox from "$components/SearchBox/SearchBox";
 import LandingPageSearchIcon from "$svg/landing_page-search_icon";
 import { FC } from "react";
+import { LandingPageHeroProps } from "./LandingPageHero.types";
 
-const LandingPageHero : FC = () => {
+const LandingPageHero : FC<LandingPageHeroProps> = ({setIsOpen}) => {
   return (
     <section className="mt-8 md:mt-16 lg2:mt-24 flex flex-col items-center">
       <h1 className="text-center font-bold not-italic font-Montserrat text-4xl md:text-6xl lg2:text-8xl text-white">Platform for <br/> web3 Creators.</h1>
@@ -16,7 +17,7 @@ const LandingPageHero : FC = () => {
         <SectionHeading text="Earn for curating exclusive web3 contents." />
         <div className="mt-6 md:mt-0">
           <p className="font-medium text-base md:text-lg text-white">On <span className="font-Montserrat font-semibold">Patreon3</span>, you can let your fans become active participants in the work they love by offering them a monthly membership.</p>
-          <Button px="px-4 md:px-6" height='h-12 md:h-55px' onClick={() => {}} text='Connect Wallet' type='secondary' className="mt-4 md:mt-8"  />
+          <Button px="px-4 md:px-6" height='h-12 md:h-55px' onClick={() => {setIsOpen(true)}} text='Connect Wallet' type='secondary' className="mt-4 md:mt-8"  />
         </div>
       </article>
     </section>

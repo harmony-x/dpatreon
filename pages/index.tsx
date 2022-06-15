@@ -19,7 +19,7 @@ const Home: NextPage = () => {
 
       <main className='font-Gilroy lg3:container mx-auto px-6 md:px-12 lg:px-24'>
           <LandingPageHeader setIsOpen={setIsOpen} />
-          <LandingPageHero />
+          <LandingPageHero setIsOpen={setIsOpen} />
           {/* <div className=''></div> */}
         <LandingPageHowTo />
         <div className='w-full mt-16 bg-dark2 h-96 lg2:h-600px'></div>
