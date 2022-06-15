@@ -1,7 +1,7 @@
 import Button from "$components/Button/Button";
 import SectionHeading from "$components/LandingPage/SectionHeading/SectionHeading";
 import SearchBox from "$components/SearchBox/SearchBox";
-import LandingPageSearchIcon from "assets/svg/landing_page-search_icon";
+import LandingPageSearchIcon from "$svg/landing_page-search_icon";
 import { FC } from "react";
 
 const LandingPageHero : FC = () => {

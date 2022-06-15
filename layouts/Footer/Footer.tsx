@@ -1,9 +1,9 @@
 import { footerDataOne, footerDataTwo } from "$utils/data";
-import FooterCopyright from "assets/svg/footer_copyright";
-import FooterInstagram from "assets/svg/footer_instagram";
-import FooterTelegram from "assets/svg/footer_telegram";
-import FooterTwitter from "assets/svg/footer_twitter";
-import LandingPageLogo from "assets/svg/landing_page_logo";
+import FooterCopyright from "$svg/footer_copyright";
+import FooterInstagram from "$svg/footer_instagram";
+import FooterTelegram from "$svg/footer_telegram";
+import FooterTwitter from "$svg/footer_twitter";
+import LandingPageLogo from "$svg/landing_page_logo";
 import Link from "next/link";
 import { FC } from "react";
 import { FooterProps } from "./Footer.types";

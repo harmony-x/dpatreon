@@ -1,5 +1,5 @@
 import Button from "$components/Button/Button";
-import LandingPageLogo from "assets/svg/landing_page_logo";
+import LandingPageLogo from "$svg/landing_page_logo";
 import Link from "next/link";
 import { Dispatch, FC, SetStateAction } from "react";
 

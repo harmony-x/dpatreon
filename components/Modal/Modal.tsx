@@ -4,7 +4,7 @@ import {
 } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ModalProps } from "./Modal.types";
-import ModalClose from "assets/svg/modal_close";
+import ModalClose from "$svg/modal_close";
 
 const Modal: FC<ModalProps> = ({
   setIsOpen,
