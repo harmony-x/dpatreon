@@ -25,10 +25,12 @@ module.exports = {
         dark2: "#141414",
         dark3: "#0C0C0C",
         dark4: "#0A0A0A",
-        footerBorderColor: "rgb(189, 189, 189)"
+        footerBorderColor: "rgb(189, 189, 189)",
+        primary: "#8247E5",
       },
       borderRadius: {
         'xs': '0.03125rem',
+        'lg2': '0.625rem',
         '4xl': '1.875rem',
         '5xl': '3.125rem',
       },
@@ -42,7 +44,10 @@ module.exports = {
       },
       borderWidth: {
         'xs': '0.03125rem'
-      }
+      },
+      maxWidth: {
+        '208px': '16rem',
+      },
     },
   },
   plugins: [],
