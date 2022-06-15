@@ -43,6 +43,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap");
-} */
+@layer base {
+  .landing-page-bg {
+    background-image: url("../public/image/landing-page/landing-page-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
