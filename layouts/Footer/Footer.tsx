@@ -10,7 +10,7 @@ import { FooterProps } from "./Footer.types";
 const Footer : FC<FooterProps> = ({theme: {fill, text1, text2, LogoSVG}}) => {
   return (
     <footer className="font-Gilroy lg3:container mx-auto">
-      <div className="flex flex-col md:flex-row md:flex-wrap items-center md:justify-between px-6 md:px-12 lg:px-24 pt-16 pb-20 gap-8 md:gap-0">
+      <div className="flex flex-col md:flex-row md:flex-wrap items-center md:items-start md:justify-between px-6 md:px-12 lg:px-24 pt-16 pb-20 gap-8 md:gap-0">
         <LogoSVG />
         {[1, 2].map((item) => (
           <nav className="flex flex-col gap-3 items-center md:items-start" key={item}>
