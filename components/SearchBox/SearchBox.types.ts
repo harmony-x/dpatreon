@@ -6,5 +6,6 @@ export type SearchBoxProps = {
   height: string,
   children?: JSX.Element,
   className?: string,
-  rightSpacing?: string
+  rightSpacing?: string,
+  leftPosition: string,
 }
