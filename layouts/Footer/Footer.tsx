@@ -3,19 +3,18 @@ import FooterCopyright from "$svg/footer_copyright";
 import FooterInstagram from "$svg/footer_instagram";
 import FooterTelegram from "$svg/footer_telegram";
 import FooterTwitter from "$svg/footer_twitter";
-import LandingPageLogo from "$svg/landing_page_logo";
 import Link from "next/link";
 import { FC } from "react";
 import { FooterProps } from "./Footer.types";
 
-const Footer : FC<FooterProps> = ({theme: {fill, text1, text2}}) => {
+const Footer : FC<FooterProps> = ({theme: {fill, text1, text2, LogoSVG}}) => {
   return (
     <footer className="font-Gilroy lg3:container mx-auto">
       <div className="flex flex-col md:flex-row md:flex-wrap items-center md:justify-between px-6 md:px-12 lg:px-24 pt-16 pb-20 gap-8 md:gap-0">
-        <LandingPageLogo />
+        <LogoSVG />
         {[1, 2].map((item) => (
           <nav className="flex flex-col gap-3 items-center md:items-start" key={item}>
-          <h5 className={`text-base md:text-lg ${text1} not-italic`}>{item === 1 ? 'About Us' : 'Help'}</h5>
+          <h5 className={`text-base md:text-lg ${text1} not-italic font-bold`}>{item === 1 ? 'About Us' : 'Help'}</h5>
           {item === 1 && footerDataOne.map(({ id, link, name }) => (
             <Link href={link} key={id}>
               <a className={`font-light ${text2} opacity-60 text-base md:text-lg`}>{name}</a>
@@ -30,7 +29,7 @@ const Footer : FC<FooterProps> = ({theme: {fill, text1, text2}}) => {
         ))}
         <nav className="flex flex-col gap-16 items-center md:items-start">
           <div className="flex flex-col gap-3 items-center md:items-start">
-            <h5 className="text-base md:text-lg text-white not-italic">Contact Us</h5>
+            <h5 className={`text-base md:text-lg ${text1} not-italic font-bold`}>Contact Us</h5>
             <Link href={'/'}>
               <a className={`font-light ${text2} opacity-60 text-base md:text-lg`}>support@Patreon3.com</a>
             </Link>
