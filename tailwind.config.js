@@ -21,6 +21,9 @@ module.exports = {
         primary: "#8247E5",
         gray1: "#B0B3B5",
         gray2: "#4F5254",
+        gray3: "#7B8084",
+        gray4: "#F8F8F6",
+        gray5: "#4A4D4F",
         dark: "#1E1E1E",
         dark2: "#141414",
         dark3: "#0C0C0C",
@@ -32,6 +35,7 @@ module.exports = {
         'xs': '0.03125rem',
         'lg2': '0.625rem',
         '4xl': '1.875rem',
+        '4.5xl': '2.5rem',
         '5xl': '3.125rem',
       },
       height: {
@@ -48,6 +52,9 @@ module.exports = {
       maxWidth: {
         '208px': '16rem',
       },
+      fontSize: {
+        'xs': '0.75rem',
+      }
     },
   },
   plugins: [],
