@@ -9,7 +9,7 @@ import { UserPageHeaderProps } from "./UserPageHeader.types";
 
 const UserPageHeader : FC<UserPageHeaderProps> = ({className}) => {
   return (
-    <header className={`py-6 lg:py-9 flex flex-col md:flex-row justify-between items-center border-b-xs border-b-gray3 border-opacity-50 ${className || ""}`}>
+    <header className={`py-6 lg:py-7 flex flex-col md:flex-row justify-between items-center border-b-xs border-b-gray3 border-opacity-10 ${className || ""}`}>
       <Link href="/feed">
         <a>
           <UserHeaderLogo />
