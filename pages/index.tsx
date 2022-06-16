@@ -3,6 +3,7 @@ import Footer from '$layouts/Footer/Footer'
 import LandingPageHeader from '$layouts/LandingPageHeader/LandingPageHeader'
 import LandingPageHero from '$layouts/LandingPageHero/LandingPageHero'
 import LandingPageHowTo from '$layouts/LandingPageHowTo/LandingPageHowTo'
+import LandingPageLogo from "$svg/landing_page_logo";
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
@@ -24,7 +25,7 @@ const Home: NextPage = () => {
         <LandingPageHowTo />
         <div className='w-full mt-16 bg-dark2 h-96 lg2:h-600px'></div>
       </main>
-      <Footer theme={{fill: "white", text1: "text-white", text2: "text-white"}} />
+      <Footer theme={{fill: "white", text1: "text-white", text2: "text-white", LogoSVG: LandingPageLogo}} />
       <ConnectWallet isOpen={isOpen} setIsOpen={setIsOpen}/>
     </div>
   )
