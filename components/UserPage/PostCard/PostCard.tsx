@@ -6,7 +6,7 @@ import { PostCardProps } from "./PostCard.types";
 const PostCard : FC<PostCardProps> = ({image, likes, tags, time, title}) => {
   return (
     <Link href={'/feed'}>
-      <a className="bg-white border-xs border-opacity-20 border-gray3 w-full min-h-386px overflow-hidden">
+      <a className="bg-white border-xs border-opacity-10 border-gray3 w-full min-h-386px overflow-hidden">
         <div className="relative w-full min-h-200px">
           <Image className="hover:scale-150 transition-transform" layout="fill" src={image} alt={title} />
         </div>
