@@ -4,4 +4,6 @@ export type PostCardType = {
   title: string;
   tags: string[];
   likes: number;
+  creatorId: string;
+  locked: boolean;
 }
