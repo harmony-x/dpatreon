@@ -44,7 +44,8 @@ module.exports = {
         '50px': '3.125rem',
         '55px': '3.4375rem',
         '488px': '30.5rem',
-        '600px': '37.5rem'
+        '600px': '37.5rem',
+        '734px': '45.875rem',
       },
       fontFamily: {
         Gilroy: "'Gilroy', sans-serif",
@@ -59,6 +60,10 @@ module.exports = {
       fontSize: {
         'xxs': '0.625rem',
         'xs': '0.75rem',
+      },
+      minHeight: {
+        '200px': '12.5rem',
+        '386px': '24.125rem',
       }
     },
   },
