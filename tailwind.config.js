@@ -18,6 +18,7 @@ module.exports = {
       colors: {
         white: "#FFFFFF",
         black: "#333333",
+        black2: "#000000",
         primary: "#8247E5",
         gray1: "#B0B3B5",
         gray2: "#4F5254",
@@ -25,13 +26,14 @@ module.exports = {
         gray4: "#F8F8F6",
         gray5: "#4A4D4F",
         gray6: "#C5CED3",
+        gray6: "#C5CED3",
         dark: "#1E1E1E",
         dark2: "#141414",
         dark3: "#0C0C0C",
         dark4: "#0A0A0A",
         footerBorderColor: "rgb(189, 189, 189)",
         primary: "#8247E5",
-        lightPurple: "#F3EDFC"
+        lightPurple: "#F3EDFC",
       },
       borderRadius: {
         'xs': '0.03125rem',
