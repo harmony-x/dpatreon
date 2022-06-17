@@ -18,16 +18,16 @@ export const howtoData : HowtoCardDataType[] = [
     description: "After taking a glance at our landing page, connecting to your wallet gives you access to start curating web3 contents.",
   },
   {
-    heading: "CONNECT",
+    heading: "PAGE",
     Icon: LandingPageConnect,
-    title: "Connect Wallet",
-    description: "Connect to your device and start using the app.",
+    title: "Setup Page",
+    description: "Successful connection to wallet leads to creator page setup, Setting up of your page can be completed within minutes.",
   },
   {
-    heading: "CONNECT",
+    heading: "CREATE",
     Icon: LandingPageConnect,
-    title: "Connect Wallet",
-    description: "Connect to your device and start using the app.",
+    title: "Create contents",
+    description: "With your creator page published, you can then create different categories of web3 content.",
   },
 ]
 
