@@ -7,6 +7,7 @@ import Ethereum from "$svg/ethereum";
 import Metamask from "$png/metamask";
 import Coinbase1 from "$png/coinbase1";
 import Coinbase2 from "$svg/coinbase2";
+import { PostCardType } from "$types/userpage";
 
 export const howtoData : HowtoCardDataType[] = [
   {
@@ -94,5 +95,29 @@ export const walletOptions : ChoiceCardType[] = [
   {
     icon: Coinbase2(),
     title: 'Coinbase Wallet',
+  }
+]
+
+export const postCardData : PostCardType[] = [
+  {
+    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655430059/Rectangle_192_qrnqfg.png',
+    time: 'JUNE 1 AT 8:26 AM',
+    title: `How NOT to Select White on White in Photoshop! - Finished PSD Download`,
+    tags: ['Photoshop Tutorial', 'Arts & Design'],
+    likes: 946
+  },
+  {
+    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655430059/Rectangle_192_qrnqfg.png',
+    time: 'JUNE 1 AT 8:26 AM',
+    title: `How NOT to Select White on White in Photoshop! - Finished PSD Download`,
+    tags: ['Photoshop Tutorial', 'Arts & Design'],
+    likes: 946
+  },
+  {
+    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655430059/Rectangle_192_qrnqfg.png',
+    time: 'JUNE 1 AT 8:26 AM',
+    title: `How NOT to Select White on White in Photoshop! - Finished PSD Download`,
+    tags: ['Photoshop Tutorial', 'Arts & Design'],
+    likes: 946
   }
 ]
