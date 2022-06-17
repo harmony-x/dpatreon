@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='font-Gilroy lg3:container mx-auto'>
+      <main className='font-Gilroy lg3:container mx-auto mb-24 lg:mb-32'>
           <UserPageHeader className='px-2 md:px-7 lg:px-16' />
           <div className='w-full max-w-768px mx-auto mt-8 md:mt-14 px-6 md:px-12 lg:px-24'>
             <div className='mb-10 w-full'>
