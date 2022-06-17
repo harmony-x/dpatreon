@@ -11,7 +11,6 @@ import Head from 'next/head'
 import { useState } from 'react'
 
 const Home: NextPage = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
   return (
     <div className='bg-white min-h-screen'>
       <Head>

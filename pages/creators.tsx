@@ -9,7 +9,6 @@ import Head from 'next/head'
 import { useState } from 'react'
 
 const Home: NextPage = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
   return (
     <div className='bg-white min-h-screen'>
       <Head>
@@ -24,7 +23,7 @@ const Home: NextPage = () => {
             <SearchBox leftPosition="left-7" SearchIcon={CreatorsSearchIcon} className="w-full max-w-477px pl-20 pr-4 bg-gray4 rounded-5xl text-base md:text-lg font-normal text-gray5 text-opacity-60" height="h-12 md:h-16" placeholder="Type creators wallet id" rightSpacing="mr-8">
               <Button px="px-6 md:px-10" height="h-12 md:h-55px" onClick={()=> {}} text="Search" type="primary" className='ml-8'  />
             </SearchBox>
-            
+
           </div>
       </main>
       <Footer theme={{fill: "#333333", text1: "text-black", text2: "text-black", LogoSVG: UserFooterLogo}} />
