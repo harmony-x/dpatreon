@@ -10,7 +10,7 @@ const PostTabs: FC<PostTabsProps> = ({ leftTabPanel, rightTabPanel }) => {
         <Tab as={Fragment}>
           {({ selected }) => (
             <button
-              className={`text-base lg:text-lg text-black hover:text-opacity-100 pb-sm transition-all outline-none bg-none mr-8 ${selected ? "font-semibold border-b-black border-b-2" : "text-opacity-60 font-light"}`}
+              className={`text-sm lg:text-base text-black hover:text-opacity-100 pb-2 transition-all outline-none bg-none mr-6 ${selected ? "font-semibold border-b-black border-b-2" : "text-opacity-60 font-light"}`}
             >
               All Posts
             </button>
@@ -19,7 +19,7 @@ const PostTabs: FC<PostTabsProps> = ({ leftTabPanel, rightTabPanel }) => {
         <Tab as={Fragment}>
           {({ selected }) => (
             <button
-            className={` text-base lg:text-lg text-black  hover:text-opacity-100 pb-sm transition-all outline-none bg-none ${selected ? "font-semibold border-b-black border-b-2" : "text-opacity-60 font-light"}`}
+            className={` text-sm lg:text-base text-black  hover:text-opacity-100 pb-2 transition-all outline-none bg-none ${selected ? "font-semibold border-b-black border-b-2" : "text-opacity-60 font-light"}`}
             >
               Patron posts
             </button>
