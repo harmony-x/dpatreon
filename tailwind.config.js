@@ -39,6 +39,7 @@ module.exports = {
         '4xl': '1.875rem',
         '4.5xl': '2.5rem',
         '5xl': '3.125rem',
+        '50%': '50%',
       },
       height: {
         '42px': '2.625rem',
@@ -58,7 +59,8 @@ module.exports = {
       maxWidth: {
         '208px': '16rem',
         '477px': '29.8125rem',
-        '612px': '38.35rem'
+        '612px': '38.35rem',
+        '768px': '48rem',
       },
       fontSize: {
         'xxs': '0.625rem',
