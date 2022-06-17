@@ -56,6 +56,8 @@ module.exports = {
       },
       maxWidth: {
         '208px': '16rem',
+        '477px': '29.8125rem',
+        '612px': '38.35rem'
       },
       fontSize: {
         'xxs': '0.625rem',
@@ -67,6 +69,9 @@ module.exports = {
       },
       padding: {
         'sm': '0.875rem',
+      },
+      width: {
+        'w-70%': '70%'
       }
     },
   },
