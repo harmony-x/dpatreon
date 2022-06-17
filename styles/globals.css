@@ -52,4 +52,7 @@
     background-image: url("https://res.cloudinary.com/dexg5uy3d/image/upload/v1655430807/Lilydusk_-_Become_a_Patron_Clicked_1_b4d9cw.png");
     @apply bg-no-repeat bg-cover bg-center;
   }
+  .backdrop-filter {
+    backdrop-filter: blur(30px);
+  }
 }
