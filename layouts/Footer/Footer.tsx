@@ -17,12 +17,12 @@ const Footer : FC<FooterProps> = ({theme: {fill, text1, text2, LogoSVG}}) => {
           <h5 className={`text-base md:text-lg ${text1} not-italic font-bold`}>{item === 1 ? 'About Us' : 'Help'}</h5>
           {item === 1 && footerDataOne.map(({ id, link, name }) => (
             <Link href={link} key={id}>
-              <a className={`font-light ${text2} opacity-60 text-base md:text-lg`}>{name}</a>
+              <a className={`font-light ${text2} text-opacity-60 text-base md:text-lg`}>{name}</a>
             </Link>
           ))}
           {item === 2 && footerDataTwo.map(({ id, link, name }) => (
             <Link href={link} key={id}>
-              <a className={`font-light ${text2} opacity-60 text-base md:text-lg`}>{name}</a>
+              <a className={`font-light ${text2} text-opacity-60 text-base md:text-lg`}>{name}</a>
             </Link>
           ))}
         </nav>
@@ -31,7 +31,7 @@ const Footer : FC<FooterProps> = ({theme: {fill, text1, text2, LogoSVG}}) => {
           <div className="flex flex-col gap-3 items-center md:items-start">
             <h5 className={`text-base md:text-lg ${text1} not-italic font-bold`}>Contact Us</h5>
             <Link href={'/'}>
-              <a className={`font-light ${text2} opacity-60 text-base md:text-lg`}>support@Patreon3.com</a>
+              <a className={`font-light ${text2} text-opacity-60 text-base md:text-lg`}>support@Patreon3.com</a>
             </Link>
           </div>
           <div className="flex gap-4">
@@ -43,7 +43,7 @@ const Footer : FC<FooterProps> = ({theme: {fill, text1, text2, LogoSVG}}) => {
       </div>
       <p className="border-t-xs border-t-footerBorderColor border-opacity-60 py-6 text-center flex justify-center items-center gap-4">
         <FooterCopyright pathFill={fill} /> 
-        <span className={`font-light ${text2} opacity-60 text-base md:text-lg`}>2022 Patreon3. All Rights Reserved</span>
+        <span className={`font-light ${text2} text-opacity-60 text-base md:text-lg`}>2022 Patreon3. All Rights Reserved</span>
       </p>
     </footer>
   )

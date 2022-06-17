@@ -17,7 +17,7 @@ const LandingPageHeader : FC<LandingPageHeaderProps> = ({setIsOpen}) => {
       </Link>
       <nav className="flex items-center mt-3 md:mt-0">
         <Link href="/">
-          <a className="font-medium text-center text-base md:text-lg text-white opacity-80 mr-4 md:mr-14 h">
+          <a className="font-medium text-center text-base md:text-lg text-white text-opacity-80 mr-4 md:mr-14 h">
             Curate a content-
           </a>
         </Link>
