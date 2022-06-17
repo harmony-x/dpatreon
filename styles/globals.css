@@ -46,7 +46,10 @@
 @layer base {
   .landing-page-bg {
     background-image: url("../public/image/landing-page/landing-page-bg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    @apply bg-no-repeat bg-cover bg-center;
+  }
+  .showcase-bg {
+    background-image: url("https://res.cloudinary.com/dexg5uy3d/image/upload/v1655430807/Lilydusk_-_Become_a_Patron_Clicked_1_b4d9cw.png");
+    @apply bg-no-repeat bg-cover bg-center;
   }
 }
