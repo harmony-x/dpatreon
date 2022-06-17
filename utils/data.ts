@@ -8,6 +8,7 @@ import Metamask from "$png/metamask";
 import Coinbase1 from "$png/coinbase1";
 import Coinbase2 from "$svg/coinbase2";
 import { PostCardType } from "$types/userpage";
+import { CreatorType } from "$types/creatorpage";
 
 export const howtoData : HowtoCardDataType[] = [
   {
@@ -119,5 +120,32 @@ export const postCardData : PostCardType[] = [
     title: `How NOT to Select White on White in Photoshop! - Finished PSD Download`,
     tags: ['Photoshop Tutorial', 'Arts & Design'],
     likes: 946
+  }
+]
+
+export const creatorsData : CreatorType[] = [
+  {
+    id: '1',
+    name: 'NFT Goddess',
+    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1628864735/fans-4_tmrcfj.png',
+    description: 'Creating easy to learn mindlowing NFT Digital Arts tutorials for everyone.',
+    tags: ['56 videos', '1004 images'],
+    patronCount: 5254
+  },
+  {
+    id: '2',
+    name: 'Lilydusk',
+    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1628864735/fans-3_i9tx0k.png',
+    description: 'Creating Videos, Words, Streams, Podcasts and Arts',
+    tags: ['299 videos', '49 audios'],
+    patronCount: 2464
+  },
+  {
+    id: '3',
+    name: 'Nerd3',
+    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1628864724/fans-1_ugqhud.png',
+    description: 'Creating Adult Romance Comics + NSFW art',
+    tags: ['56 audios', '304 images'],
+    patronCount: 14254
   }
 ]
