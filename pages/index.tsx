@@ -21,9 +21,9 @@ const Home: NextPage = () => {
       <main className='font-Gilroy lg3:container mx-auto px-6 md:px-12 lg:px-24'>
           <LandingPageHeader setIsOpen={setIsOpen} />
           <LandingPageHero setIsOpen={setIsOpen} />
-          {/* <div className=''></div> */}
         <LandingPageHowTo />
-        <div className='w-full mt-16 bg-dark2 h-96 lg2:h-600px'></div>
+        <h2 className={`font-bold not-italic font-Montserrat text-2xl md:text-3xl lg2:text-4xl lg3:text-6xl text-white mt-16 mb-6 md:mb-16 text-center`}>It’s <span className='text-primary'>easier</span> than you think</h2>
+        <div className='w-full h-488px lg2:h-734px md:h-600px showcase-bg'></div>
       </main>
       <Footer theme={{fill: "white", text1: "text-white", text2: "text-white", LogoSVG: LandingPageLogo}} />
       <ConnectWallet isOpen={isOpen} setIsOpen={setIsOpen}/>
