@@ -30,6 +30,7 @@ module.exports = {
         dark4: "#0A0A0A",
         footerBorderColor: "rgb(189, 189, 189)",
         primary: "#8247E5",
+        lightPurple: "#F3EDFC"
       },
       borderRadius: {
         'xs': '0.03125rem',
@@ -39,7 +40,10 @@ module.exports = {
         '5xl': '3.125rem',
       },
       height: {
+        '42px': '2.625rem',
+        '50px': '3.125rem',
         '55px': '3.4375rem',
+        '488px': '30.5rem',
         '600px': '37.5rem'
       },
       fontFamily: {
@@ -53,6 +57,7 @@ module.exports = {
         '208px': '16rem',
       },
       fontSize: {
+        'xxs': '0.625rem',
         'xs': '0.75rem',
       }
     },
