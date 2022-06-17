@@ -8,7 +8,6 @@ import UserPageHeader from '$layouts/UserPageHeader/UserPageHeader'
 import UserFooterLogo from '$svg/user_footer_logo'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useState } from 'react'
 
 const Home: NextPage = () => {
   return (
