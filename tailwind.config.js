@@ -24,6 +24,7 @@ module.exports = {
         gray3: "#7B8084",
         gray4: "#F8F8F6",
         gray5: "#4A4D4F",
+        gray6: "#C5CED3",
         dark: "#1E1E1E",
         dark2: "#141414",
         dark3: "#0C0C0C",
@@ -68,6 +69,7 @@ module.exports = {
         '386px': '24.125rem',
       },
       padding: {
+        '1px': '0.0625rem',
         'sm': '0.875rem',
       },
       width: {
