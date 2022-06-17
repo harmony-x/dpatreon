@@ -101,25 +101,31 @@ export const walletOptions : ChoiceCardType[] = [
 
 export const postCardData : PostCardType[] = [
   {
-    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655430059/Rectangle_192_qrnqfg.png',
+    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655462407/Rectangle_206_c3krrf.png',
     time: 'JUNE 1 AT 8:26 AM',
     title: `How NOT to Select White on White in Photoshop! - Finished PSD Download`,
     tags: ['Photoshop Tutorial', 'Arts & Design'],
-    likes: 946
+    likes: 946,
+    creatorId: '1',
+    locked: false
   },
   {
-    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655430059/Rectangle_192_qrnqfg.png',
+    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655462407/Rectangle_206_c3krrf.png',
     time: 'JUNE 1 AT 8:26 AM',
     title: `How NOT to Select White on White in Photoshop! - Finished PSD Download`,
     tags: ['Photoshop Tutorial', 'Arts & Design'],
-    likes: 946
+    likes: 946,
+    creatorId: '2',
+    locked: true
   },
   {
-    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655430059/Rectangle_192_qrnqfg.png',
+    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655462407/Rectangle_206_c3krrf.png',
     time: 'JUNE 1 AT 8:26 AM',
     title: `How NOT to Select White on White in Photoshop! - Finished PSD Download`,
     tags: ['Photoshop Tutorial', 'Arts & Design'],
-    likes: 946
+    likes: 946,
+    creatorId: '3',
+    locked: true
   }
 ]
 
