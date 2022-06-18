@@ -1,6 +1,6 @@
 import React from "react"
 
 export type CreatorShowcaseProps = {
-  children: React.ReactNode,
+  children?: React.ReactNode,
   img: string
 }
