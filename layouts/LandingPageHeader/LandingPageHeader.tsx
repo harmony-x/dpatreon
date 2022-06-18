@@ -19,7 +19,7 @@ const LandingPageHeader : FC<LandingPageHeaderProps> = ({setIsOpen}) => {
       <nav className="flex items-center mt-3 md:mt-0">
         <Link href="/">
           <a className="font-medium text-center text-base md:text-lg text-black text-opacity-90 mr-4 md:mr-14 h">
-            Curate a content
+            Create a Content
           </a>
         </Link>
         <Button px="px-4 md:px-6" height='h-12 md:h-55px' onClick={() => {setIsOpen(true)}} text='Connect Wallet' type='primary'  />

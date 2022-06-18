@@ -1,5 +1,4 @@
 import Avartar from "$components/Avartar/Avartar";
-import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import { CreatorSearchProps } from "./CreatorsSearch.types";
@@ -14,7 +13,7 @@ const CreatorsSearch : FC<CreatorSearchProps> = ({creators}) => {
           <div className="w-full border-xs border-opacity-10 border-gray3">
             {creators.map((creator, index) => (
               <div className={`w-full ${index === creators.length - 1 ? '' : ' border-b-xs border-opacity-10 border-b-gray3' }`} key={index}>
-                <Link href={'/creators/' + creator.id}>
+                <Link href={'/creator/' + creator.id}>
                   <a className="bg-white w-full overflow-hidden flex flex-col md:flex-row items-center justify-between gap-5 px-8 py-9">
                     <div className="flex flex-col md:flex-row items-center gap-5">
                       <Avartar sizeClassNames="w-20 h-20" src={creator.image} />
