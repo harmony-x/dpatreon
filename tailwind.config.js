@@ -47,16 +47,19 @@ module.exports = {
         '42px': '2.625rem',
         '50px': '3.125rem',
         '55px': '3.4375rem',
+        '181px': '11.3125rem',
         '488px': '30.5rem',
         '600px': '37.5rem',
         '734px': '45.875rem',
       },
       fontFamily: {
         Gilroy: "'Gilroy', sans-serif",
-        Montserrat: "'Montserrat', sans-serif"
+        Montserrat: "'Montserrat', sans-serif",
+        Raleway: "'Raleway', sans-serif",
       },
       borderWidth: {
-        'xs': '0.03125rem'
+        'xs': '0.03125rem',
+        '10px': '0.625rem'
       },
       maxWidth: {
         '208px': '16rem',
@@ -70,6 +73,7 @@ module.exports = {
       },
       minHeight: {
         '200px': '12.5rem',
+        '314px': '19.625rem',
         '386px': '24.125rem',
       },
       padding: {
@@ -77,8 +81,9 @@ module.exports = {
         'sm': '0.875rem',
       },
       width: {
-        'w-70%': '70%',
-        'w-90%': '90%',
+        '70%': '70%',
+        '90%': '90%',
+        '181px': '11.3125rem',
         '445px': '27.8125rem',
         '768px': '48rem',
       }
