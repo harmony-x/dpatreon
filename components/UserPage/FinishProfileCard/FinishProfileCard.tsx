@@ -1,5 +1,4 @@
 import Button from "$components/Button/Button";
-import UserAvartar from "$svg/user_avartar";
 import { FC } from "react";
 import { FinishProfileCardProps } from "./FinishProfileCard.types";
 
