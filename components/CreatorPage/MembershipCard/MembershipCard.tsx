@@ -1,5 +1,4 @@
 import Button from "$components/Button/Button";
-import UserAvartar from "$svg/user_avartar";
 import Image from "next/image";
 import { FC } from "react";
 import { MembershipCardProps } from "./MembershipCard.types";
