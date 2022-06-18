@@ -6,3 +6,11 @@ export type CreatorType = {
   tags: string[];
   patronCount: number;
 }
+
+export type MembershipType = {
+  title: string;
+  image: string;
+  price: string;
+  benefits: string[];
+  description: string
+}
