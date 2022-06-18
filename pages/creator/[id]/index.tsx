@@ -17,7 +17,7 @@ const Creator: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='font-Gilroy lg3:container mx-auto mb-16'>
+      <main className='font-Raleway lg3:container mx-auto mb-16'>
           <UserPageHeader className='px-2 md:px-7 lg:px-16' />
           <CreatorShowcase img='https://res.cloudinary.com/dexg5uy3d/image/upload/v1655582210/Rectangle_206_1_abqm82.png'>
             <div style={{backgroundImage: `url(https://res.cloudinary.com/dexg5uy3d/image/upload/v1655582260/Group_67_nmmlhx.png)`}} className='bg-center bg-no-repeat w-40 h-40 md:w-181px md:h-181px border-10px border-white rounded-50% absolute left-1/2 bottom-0 -translate-x-1/2  translate-y-1/2'></div>
