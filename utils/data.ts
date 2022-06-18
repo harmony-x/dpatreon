@@ -129,6 +129,27 @@ export const postCardData : PostCardType[] = [
   }
 ]
 
+export const creatorPostCardData : PostCardType[] = [
+  {
+    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655462407/Rectangle_206_c3krrf.png',
+    time: 'JUNE 1 AT 8:26 AM',
+    title: `How NOT to Select White on White in Photoshop! - Finished PSD Download`,
+    tags: ['Photoshop Tutorial', 'Arts & Design'],
+    likes: 946,
+    creatorId: '2',
+    locked: true
+  },
+  {
+    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655462407/Rectangle_206_c3krrf.png',
+    time: 'JUNE 1 AT 8:26 AM',
+    title: `(Fast Pass) MPL Ep 103 - High-Res Artwork + Discussion`,
+    tags: ['Photoshop Tutorial', 'Arts & Design'],
+    likes: 946,
+    creatorId: '4',
+    locked: true
+  }
+]
+
 export const creatorsData : CreatorType[] = [
   {
     id: '1',
