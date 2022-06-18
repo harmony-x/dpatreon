@@ -1,5 +1,5 @@
 export type ButtonProps = {
-  type: "primary" | "secondary" | "card1" | "unlock",
+  type: "primary" | "secondary" | "card1" | "unlock" | "card2",
   text: string,
   onClick?: () => void,
   disabled?: boolean,
