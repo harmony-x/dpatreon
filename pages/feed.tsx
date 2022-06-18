@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       <main className='font-Raleway lg3:container mx-auto mb-24 lg:mb-32'>
           <UserPageHeader className='px-2 md:px-7 lg:px-16' />
           <div className="px-6 md:px-12 lg:px-24 mt-12">
-            <ThreeColumnLayout centerColumn={<FeedPosts />} leftColumn={<ProfileCard CTAButton={<Button px="px-4 md:px-6" height='h-42px' onClick={() => {}} text='Share page' type='card1' className="w-full"  />} creation="" patrons={0} userName="0x7ceb23fd6bc...619" />} rightColumn={<FinishProfileCard />} />
+            <ThreeColumnLayout centerColumn={<FeedPosts />} leftColumn={<ProfileCard CTAButton={<Button px="px-4 md:px-6" height='h-42px' onClick={() => {}} text='Share' type='card1' className="w-full"  />} creation="" patrons={0} userName="0x7ceb23fd6bc...619" />} rightColumn={<FinishProfileCard />} />
           </div>
       </main>
       <Footer theme={{fill: "#333333", text1: "text-black", text2: "text-black", LogoSVG: UserFooterLogo}} />
