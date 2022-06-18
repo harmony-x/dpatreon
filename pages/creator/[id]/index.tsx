@@ -1,10 +1,11 @@
 import Button from '$components/Button/Button'
+import MembershipCard from '$components/CreatorPage/MembershipCard/MembershipCard'
 import PostCard from '$components/UserPage/PostCard/PostCard'
 import CreatorShowcase from '$layouts/CreatorShowcase/CreatorShowcase'
 import Footer from '$layouts/Footer/Footer'
 import UserPageHeader from '$layouts/UserPageHeader/UserPageHeader'
 import UserFooterLogo from '$svg/user_footer_logo'
-import { creatorPostCardData } from '$utils/data'
+import { creatorMembership, creatorPostCardData } from '$utils/data'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
@@ -26,9 +27,12 @@ const Creator: NextPage = () => {
             <h1 className='text-lg font-bold text-black mb-1'>Lilydusk</h1>
             <p className='text-black text-opacity-60 font-light text-base'>is creating Adult Romance Comics + NSFW art</p>
           </div>
-          <section className='text-center'>
+          <section className='text-center px-6 md:px-12 lg:px-24'>
             <h2 className='mb-8 text-lg md:text-2xl text-black font-bold'>Select a membership level</h2>
-            <p className='flex flex-col gap-1 items-center'>
+            <div className='flex flex-col md:flex-row gap-6 md:gap-2 lg:gap-10'>
+              {creatorMembership.map((item, index) => <MembershipCard key={index} {...item} />)}
+            </div>
+            <p className='flex flex-col gap-1 items-center mt-16'>
               <span className='text-xl font-semibold'>14, 350</span>
               <span className='text-black text-opacity-60 font-medium'>PATRONS</span>
             </p>
@@ -38,8 +42,8 @@ const Creator: NextPage = () => {
             </div>
             <div className='flex flex-col gap-8 items-center justify-center mx-auto w-full md:w-2/5'>
               {creatorPostCardData.map((item, index) => <PostCard {...item} key={index} />)}
-              <div className="mx-6 md:mx-0">
-                <Button px="px-10 md:px-12" height='h-42px' onClick={() => {}} text='See all posts' type='card1' className="w-full md:mt-7"  />
+              <div className="mx-6 md:mx-0 md:w-full">
+                <Button px="px-10 md:px-12" height='h-42px' onClick={() => {}} text='See all posts' type='card1' className="w-full md:mt-7" link='/creator/1/posts'  />
               </div>
             </div>
           </section>
