@@ -46,7 +46,7 @@
 
 @layer base {
   .landing-page-bg {
-    background-image: url("../public/image/landing-page/landing-page-bg.png");
+    background-image: url("https://res.cloudinary.com/dexg5uy3d/image/upload/v1655589212/landing-page-bg_i7fddv.png");
     @apply bg-no-repeat bg-cover bg-center;
   }
   .showcase-bg {
