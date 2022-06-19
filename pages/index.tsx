@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='lg3:container mx-auto px-6 md:px-12 lg:px-24 mb-16 bg-white'>
+      <main className='font-Gilroy lg3:container mx-auto px-6 md:px-12 lg:px-24 mb-16 bg-white'>
         <LandingPageHeader setIsOpen={setIsOpen} />
         <LandingPageHero setIsOpen={setIsOpen} />
         <LandingPageHowTo />

@@ -23,7 +23,7 @@ const CreatorPosts: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='lg3:container mx-auto mb-16'>
+      <main className='font-Gilroy lg3:container mx-auto mb-16'>
           <UserPageHeader className='px-2 md:px-7 lg:px-16' />
           <CreatorShowcase img='https://res.cloudinary.com/dexg5uy3d/image/upload/v1655582210/Rectangle_206_1_abqm82.png'/>
           <div className="px-6 md:px-12 lg:px-24 mt-12 md:mt-32">
