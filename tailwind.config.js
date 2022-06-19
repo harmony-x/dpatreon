@@ -55,7 +55,6 @@ module.exports = {
       fontFamily: {
         Gilroy: "'Gilroy', sans-serif",
         Montserrat: "'Montserrat', sans-serif",
-        Raleway: "'Raleway', sans-serif",
       },
       borderWidth: {
         'xs': '0.03125rem',
