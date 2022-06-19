@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
 @font-face {
   font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("../public/fonts/Gilroy-Bold.woff") format("woff");
+  src: url("/fonts/Gilroy-Bold.woff") format("woff");
 }
 
 @font-face {
@@ -13,7 +12,7 @@
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url("../public/fonts/Gilroy-Heavy.woff") format("woff");
+  src: url("/fonts/Gilroy-Heavy.woff") format("woff");
 }
 
 @font-face {
@@ -21,7 +20,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url("../public/fonts/Gilroy-Light.woff") format("woff");
+  src: url("/fonts/Gilroy-Light.woff") format("woff");
 }
 
 @font-face {
@@ -29,7 +28,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("../public/fonts/Gilroy-Medium.woff") format("woff");
+  src: url("/fonts/Gilroy-Medium.woff") format("woff");
 }
 
 @font-face {
@@ -37,7 +36,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../public/fonts/Gilroy-Regular.woff") format("woff");
+  src: url("/fonts/Gilroy-Regular.woff") format("woff");
 }
 
 @tailwind base;
