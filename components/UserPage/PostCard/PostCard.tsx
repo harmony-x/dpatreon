@@ -20,7 +20,7 @@ const PostCard : FC<PostCardProps> = ({image, likes, tags, time, title, creatorI
           </>
           }
         </div>
-        <div className="py-4 pl-6 pr-8 md:pr-16 text-left">
+        <div className="py-4 pl-6 pr-8 md:pr-6 lg:pr-16 text-left">
           <p className="text-xs font-medium text-black text-opacity-40 mb-1">{time}</p>
           <h4 className="text-base md:text-lg text-black font-semibold mt-3 mb-3">{title}</h4>
           <div className="flex flex-wrap gap-2 mb-5">
