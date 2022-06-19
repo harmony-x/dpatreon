@@ -7,3 +7,8 @@ export type PostCardType = {
   creatorId: string;
   locked: boolean;
 }
+
+export type FileType = {
+  file: string | null, 
+  fileLoader: boolean
+}
