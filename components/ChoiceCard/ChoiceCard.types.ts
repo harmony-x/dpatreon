@@ -1,3 +1,5 @@
 import { ChoiceCardType } from "$types/global";
 
-export type ChoiceCardProps = ChoiceCardType
+export type ChoiceCardProps = ChoiceCardType & {
+    onClick: () => void;
+}

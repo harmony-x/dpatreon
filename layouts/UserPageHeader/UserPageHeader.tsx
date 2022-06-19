@@ -19,7 +19,6 @@ const UserPageHeader : FC<UserPageHeaderProps> = ({className}) => {
       <nav className="flex flex-col md:flex-row items-center mt-3 md:mt-0">
       <SearchBox SearchIcon={UserHeaderSearchIcon} height={'h-9'} className='rounded-4.5xl font-light text-gray5 bg-gray4 pl-9 text-xs mr-0 md:mr-6' leftPosition="left-3" placeholder="Find a creator" />
       <Avartar sizeClassNames="h-10 w-10" src="https://res.cloudinary.com/dexg5uy3d/image/upload/v1644112035/choir1_cdq0wx.jpg" />
-        {/* <Button px="px-4 md:px-6" height='h-12 md:h-55px' onClick={() => {}} text='Connect Wallet' type='secondary'  /> */}
       </nav>
     </header>
   )

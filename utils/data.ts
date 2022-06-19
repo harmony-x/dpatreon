@@ -38,14 +38,9 @@ export const footerDataOne : LinkList[] = [
     id: 1
   },
   {
-    name: 'Connect Wallet',
-    link: '/',
-    id: 2
-  },
-  {
     name: 'Join Discord',
     link: '/',
-    id: 3
+    id: 2
   }
 ]
 
@@ -89,14 +84,14 @@ export const walletOptions : ChoiceCardType[] = [
     icon: Metamask(),
     title: 'Metamask',
   },
-  {
-    icon: Coinbase1(),
-    title: 'Coinbase Wallet',
-  },
-  {
-    icon: Coinbase2(),
-    title: 'Coinbase Wallet',
-  }
+  // {
+  //   icon: Coinbase1(),
+  //   title: 'Coinbase Wallet',
+  // },
+  // {
+  //   icon: Coinbase2(),
+  //   title: 'Coinbase Wallet',
+  // }
 ]
 
 export const postCardData : PostCardType[] = [
