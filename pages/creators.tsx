@@ -12,7 +12,7 @@ import Head from "next/head";
 import { useQuery } from "react-query";
 
 const Home: NextPage = () => {
-  const { data } = useQuery("posts", getCreators);
+  const { data } = useQuery("creators", getCreators);
   console.log(data)
   return (
     <div className="bg-white min-h-screen">

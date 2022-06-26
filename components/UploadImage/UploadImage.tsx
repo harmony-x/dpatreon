@@ -56,7 +56,6 @@ const UploadImage: FC<UploadImageProps> = ({
             name={id}
             className="cursor-pointer absolute block appearance-none sr-only"
             onChange={onChange}
-            required
           />
           {InputComponent}
         </label>
