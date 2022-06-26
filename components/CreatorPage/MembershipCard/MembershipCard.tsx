@@ -27,6 +27,7 @@ const MembershipCard: FC<MembershipCardProps> = ({
             image
           }
           alt={`Showcase image of ${title}`}
+          unoptimized
         />
       </div>
       <p className="flex flex-col gap-1 mb-4">

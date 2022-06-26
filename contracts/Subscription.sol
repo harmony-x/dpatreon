@@ -72,7 +72,7 @@ contract PatreonThreeSubscription is ERC721URIStorage {
         creators[msg.sender].tiers[_tierId].price = _tierInfo.price;
         creators[msg.sender].tiers[_tierId].image = _tierInfo.image;
         creators[msg.sender].tiers[_tierId].benefits = _tierInfo.benefits;
-        creators[msg.sender].tiers[_tierId].description = _tierInfo.benefits;
+        creators[msg.sender].tiers[_tierId].description = _tierInfo.description;
         return true;
     }
 
