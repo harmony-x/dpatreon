@@ -3,6 +3,8 @@ import { Input } from "$components/Input/Input";
 import { TextArea } from "$components/TextArea/TextArea";
 import UploadImage from "$components/UploadImage/UploadImage";
 import { FileType } from "$types/userpage";
+import { patreonContract } from "$utils/contracts";
+import { useWeb3React } from "@web3-react/core";
 import React, { useState } from "react";
 import { EditProfileHeading } from "../EditProfileHeading/EditProfileHeading";
 import { BasicPanelProps } from "./BasicPanel.types";
@@ -58,8 +60,9 @@ export const BasicPanel: React.FC<BasicPanelProps> = ({
   const [patreonName, setPatreonName] = useState<string>("");
   const [creationName, setCreationName] = useState<string>("");
   const [aboutDescription, setAboutDescription] = useState<string>("");
-  console.log(fileProfile);
-  console.log(fileCover);
+  const { library } = useWeb3React();
+
+  
   const onPatreonNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPatreonName(e.target.value);
   };
@@ -73,6 +76,14 @@ export const BasicPanel: React.FC<BasicPanelProps> = ({
   ) => {
     setAboutDescription(e.target.value);
   };
+
+  console.log({
+    _profilePhoto: fileProfile,
+    _coverPhoto: fileCover,
+    _name: creationName,
+    _isAreCreating: "is",
+    _about: aboutDescription,
+  })
 
   return (
     <form
@@ -90,6 +101,7 @@ export const BasicPanel: React.FC<BasicPanelProps> = ({
           <div className="w-full border-xs border-gray3 border-opacity-30 py-8 px-4 md:px-8 flex flex-col md:flex-row justify-between">
             <UploadImage
               gap="gap-1 md:gap-9"
+              id="fileProfile"
               file={fileProfile}
               fileLoader={fileProfileLoader}
               setFile={setFileProfile}
@@ -108,6 +120,7 @@ export const BasicPanel: React.FC<BasicPanelProps> = ({
             />
             <UploadImage
               gap="gap-1 md:gap-8"
+              id="fileCover"
               file={fileCover}
               fileLoader={fileCoverLoader}
               setFile={setFileCover}
@@ -162,7 +175,9 @@ export const BasicPanel: React.FC<BasicPanelProps> = ({
           <Button
             px="px-6 md:px-10"
             height="h-12 md:h-55px"
-            onClick={() => {}}
+            onClick={async () => {
+              await patreonContract(library).fillBasics(fileProfile!, fileCover!, creationName, "is", aboutDescription)
+            }}
             text="Save Changes"
             type="primary"
             className="w-full mt-4"
