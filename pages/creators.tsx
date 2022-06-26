@@ -5,15 +5,14 @@ import Footer from "$layouts/Footer/Footer";
 import UserPageHeader from "$layouts/UserPageHeader/UserPageHeader";
 import CreatorsSearchIcon from "$svg/creators_search_icon";
 import UserFooterLogo from "$svg/user_footer_logo";
-import { creatorsData } from "$utils/data";
 import { getCreators } from "actions";
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import { useQuery } from "react-query";
 
 const Home: NextPage = () => {
-  const { data } = useQuery("posts", getCreators);
-  console.log(data)
+  const { data, isLoading, isError } = useQuery("posts", getCreators);
   return (
     <div className="bg-white min-h-screen">
       <Head>
@@ -43,7 +42,9 @@ const Home: NextPage = () => {
               />
             </SearchBox>
           </div>
-          <CreatorsSearch creators={creatorsData} />
+          <p className="mb-6 text-black font-semibold text-center md:text-left">List of creators</p>
+          {/* <p className="mb-6 text-black font-semibold text-center md:text-left">Results for “Lilydusk”</p> */}
+          {isLoading ? <div className="relative w-full h-36"><Image src="/load.gif" alt="" layout="fill" /></div> : isError || !data ? <p className="mb-6 text-red-600 font-semibold text-center md:text-left">Error loading creators</p> : <CreatorsSearch creators={data} />}
         </div>
       </main>
       <Footer
