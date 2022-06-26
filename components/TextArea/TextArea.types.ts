@@ -9,4 +9,7 @@ export type TextAreaProps = {
   className?: string,
   px: string,
   py: string,
+  labelClassName?: string,
+  textAreaClassName?: string,
+  labelTextSize?: 'sm' | 'lg',
 }

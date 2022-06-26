@@ -7,5 +7,8 @@ export type InputProps = {
   labelFor: string,
   height: string,
   className?: string,
-  px: string
+  px: string,
+  onEnter?: () => void,
+  isRequired?: boolean,
+  labelTextSize?: 'sm' | 'lg',
 }
