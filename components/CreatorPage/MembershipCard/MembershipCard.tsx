@@ -24,7 +24,7 @@ const MembershipCard: FC<MembershipCardProps> = ({
           layout="fill"
           objectFit="cover"
           src={
-            "https://res.cloudinary.com/dexg5uy3d/image/upload/v1655585351/Rectangle_204_2_u24cdu.png"
+            image
           }
           alt={`Showcase image of ${title}`}
         />
