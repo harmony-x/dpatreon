@@ -14,11 +14,10 @@ import { useQuery } from "react-query";
 const Home: NextPage = () => {
   const [search, setSearch] = React.useState("");
   const { data, isLoading, isError } = useQuery("posts", getCreators);
-
   const handleInputSearch = (e : React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   }
-
+  console.log(data)
   return (
     <div className="bg-white min-h-screen">
       <Head>
