@@ -12,10 +12,10 @@ const MembershipCardTwo: FC<MembershipCardTwoProps> = ({benefits, description, i
         <span className="text-sm font-medium text-black text-opacity-60 uppercase">PER MONTH</span>
       </p>
       <div className="relative w-full h-24 mb-2">
-        <Image layout="fill" objectFit="cover" src={image} alt={`Showcase image of ${title}`} />
+        <Image layout="fill" objectFit="cover" src={'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655585351/Rectangle_204_2_u24cdu.png'} alt={`Showcase image of ${title}`} />
       </div>
       <ul className="mb-2 self-start text-left mt-7">
-        {benefits.map((item, index) => <li className="text-xs font-semibold text-black mb-1 flex items-center" key={index}>{item}</li>)}
+        {benefits.split('|').map((item, index) => <li className="text-xs font-semibold text-black mb-1 flex items-center" key={index}>{item}</li>)}
       </ul>
       <p className="text-xs font-light text-black text-opacity-60 self-start text-left mb-6">{description}</p>
       <Button px="px-10 md:px-12" height='h-42px' onClick={() => {}} text='Join' type='card2' className="w-full"  />

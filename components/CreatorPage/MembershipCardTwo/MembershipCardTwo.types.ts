@@ -1,3 +1,3 @@
-import { MembershipType } from "$types/creatorpage";
+import { Tier } from "actions";
 
-export type MembershipCardTwoProps = MembershipType;
+export type MembershipCardTwoProps = Tier;

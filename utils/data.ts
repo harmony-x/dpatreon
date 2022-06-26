@@ -8,7 +8,6 @@ import Metamask from "$png/metamask";
 import Coinbase1 from "$png/coinbase1";
 import Coinbase2 from "$svg/coinbase2";
 import { PostCardType } from "$types/userpage";
-import { MembershipType } from "$types/creatorpage";
 
 export const howtoData : HowtoCardDataType[] = [
   {
@@ -142,29 +141,5 @@ export const creatorPostCardData : PostCardType[] = [
     likes: 946,
     creatorId: '4',
     locked: true
-  }
-]
-
-export const creatorMembership : MembershipType[] = [
-  {
-    benefits: ['Patron-only newsletter', 'Access to drafts and works-in-Progress'],
-    description: `Unlock access to Lilydusk's Patron-Only Facebook Group.`,
-    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655585351/Rectangle_204_1_srqngk.png',
-    price: '1 MATIC',
-    title: 'The Secret Garden'
-  },
-  {
-    benefits: ['Special Mention in video credits.', ' All the Rewards above.'],
-    description: ``,
-    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655585351/Rectangle_204_2_u24cdu.png',
-    price: '5 MATIC',
-    title: 'Celebrity Patreon'
-  },
-  {
-    benefits: ['One-on-One Email Support.', 'Access to PSDs and Images used in tutorials on Patron-feed.'],
-    description: ``,
-    image: 'https://res.cloudinary.com/dexg5uy3d/image/upload/v1655585350/Rectangle_204_mqthti.png',
-    price: '10 MATIC',
-    title: ' Master Patreon'
   }
 ]

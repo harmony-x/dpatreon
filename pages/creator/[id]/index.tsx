@@ -57,8 +57,8 @@ const CreatorPage: NextPage = () => {
               Select a membership level
             </h2>
             <div className="flex flex-col md:flex-row gap-6 md:gap-2 lg:gap-10">
-              {creatorMembership.map((item, index) => (
-                <MembershipCard key={index} {...item} />
+              {creator.tiers.filter(({published}) => published).map((item, index) => (
+               <div className="w-full md:w-1/2 lg:w-1/3" key={index}><MembershipCard {...item} /></div>
               ))}
             </div>
             <p className="flex flex-col gap-1 items-center mt-16">
@@ -97,7 +97,7 @@ const CreatorPage: NextPage = () => {
                   text="See all posts"
                   type="card1"
                   className="w-full md:mt-7"
-                  link="/creator/1/posts"
+                  link={`/creator/${creator.creatorAddress}/posts`}
                 />
               </div>
             </div>
