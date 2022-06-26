@@ -3,10 +3,11 @@ import { MustConnectProps } from "./MustConnect.types";
 import { useWeb3React } from "@web3-react/core";
 import Button from "$components/Button/Button";
 import { connectors } from "connectors";
+import { refreshCache } from "$utils/wallet";
 
 const MustConnect: FC<MustConnectProps> = ({ children }) => {
-  const { library, chainId, account, activate, deactivate, active } =
-    useWeb3React();
+  const { chainId, activate, deactivate, active } = useWeb3React();
+  refreshCache(activate);
   return active ? (
     <>{children}</>
   ) : (

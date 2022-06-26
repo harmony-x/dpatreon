@@ -1,3 +1,4 @@
+import { connectors } from "connectors";
 import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 
@@ -46,4 +47,17 @@ export const truncateAddress = (address: string, long = false) => {
 export const toHex = (num: number) => {
   const val = Number(num);
   return "0x" + val.toString(16);
+};
+
+export const setProvider = (type: string) => {
+  window.localStorage.setItem("provider", type);
+};
+
+export const refreshCache = async (activate: any) => {
+  if (typeof window !== "undefined") {
+    const provider = window.localStorage.getItem("provider");
+    if (provider && provider in connectors) {
+      await activate(connectors[provider! as "injected"]);
+    }
+  }
 };

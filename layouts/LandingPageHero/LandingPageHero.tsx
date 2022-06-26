@@ -9,7 +9,7 @@ const LandingPageHero : FC<LandingPageHeroProps> = ({setIsOpen}) => {
   return (
     <section className=" flex flex-col items-stretch">
       <div className="relative py-24">
-      <div className="landing-page-bg absolute -left-6 md:-left-12 lg:-left-24 top-0 lg3:left-0 w-screen lg3:w-full h-full z-auto" />
+      <div className="landing-page-bg absolute -left-6 md:-left-12 lg:-left-24 top-0 w-screen h-full z-auto" />
       <h1 className="text-center font-bold not-italic font-Montserrat text-4xl md:text-6xl lg2:text-8xl text-white z-10 relative">Platform for <br/> web3 Creators.</h1>
       <p className="font-light text-center text-base md:text-2xl text-white my-4 md:my-6 lg2:my-8 z-10 relative">We built a decentralized version of Patreon catered to <br/> the web3 creator community. </p>
       <div className="flex justify-center z-10 relative">
