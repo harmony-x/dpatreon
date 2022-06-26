@@ -27,7 +27,7 @@ const LandingPageHeader: FC<LandingPageHeaderProps> = ({ setIsOpen }) => {
             onClick={() => {
               !active
                 ? alert("Connect your wallet first")
-                : router.push(`/creator/${account}`);
+                : router.push(`/feed`);
             }}
             className="font-medium text-center text-base md:text-lg text-black text-opacity-90 mr-4 md:mr-14 h"
           >
