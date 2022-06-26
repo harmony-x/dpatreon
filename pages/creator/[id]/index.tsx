@@ -6,10 +6,24 @@ import Footer from "$layouts/Footer/Footer";
 import UserPageHeader from "$layouts/UserPageHeader/UserPageHeader";
 import UserFooterLogo from "$svg/user_footer_logo";
 import { creatorMembership, creatorPostCardData } from "$utils/data";
+import { Creator, getCreators } from "actions";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import React from "react";
+import { useQuery } from "react-query";
 
-const Creator: NextPage = () => {
+const CreatorPage: NextPage = () => {
+  const { data, isLoading, isError } = useQuery("posts", getCreators);
+  const [creator, setCreator] = React.useState<Creator | null>(null)
+  const {query} = useRouter();
+
+  React.useEffect(() => {
+    if(query?.id && data) {
+      setCreator(data.find(item => item.creatorAddress === query?.id && item.launched) || null);
+    }
+  }, [query, data])
+
   return (
     <div className="bg-white min-h-screen">
       <Head>
@@ -20,18 +34,19 @@ const Creator: NextPage = () => {
 
       <main className="font-Gilroy lg3:container mx-auto mb-16">
         <UserPageHeader className="px-2 md:px-7 lg:px-16" />
-        <CreatorShowcase img="https://res.cloudinary.com/dexg5uy3d/image/upload/v1655582210/Rectangle_206_1_abqm82.png">
+        {!isLoading && creator ? <>
+        <CreatorShowcase img={creator.coverPhoto}>
           <div
             style={{
-              backgroundImage: `url(https://res.cloudinary.com/dexg5uy3d/image/upload/v1655582260/Group_67_nmmlhx.png)`,
+              backgroundImage: `url(${creator.profilePhoto})`,
             }}
             className="bg-center bg-no-repeat w-40 h-40 md:w-181px md:h-181px border-10px border-white rounded-50% absolute left-1/2 bottom-0 -translate-x-1/2  translate-y-1/2"
           ></div>
         </CreatorShowcase>
         <div className="text-center mt-24 mb-10 md:mb-16">
-          <h1 className="text-lg font-bold text-black mb-1">Lilydusk</h1>
+          <h1 className="text-lg font-bold text-black mb-1">{creator.name}</h1>
           <p className="text-black text-opacity-60 font-light text-base">
-            is creating Adult Romance Comics + NSFW art
+            {creator.isAreCreating}
           </p>
         </div>
         <section className="text-center px-6 md:px-12 lg:px-24">
@@ -44,7 +59,7 @@ const Creator: NextPage = () => {
             ))}
           </div>
           <p className="flex flex-col gap-1 items-center mt-16">
-            <span className="text-xl font-semibold">14, 350</span>
+            <span className="text-xl font-semibold">{creator.patrons}</span>
             <span className="text-black text-opacity-60 font-medium">
               PATRONS
             </span>
@@ -84,6 +99,7 @@ const Creator: NextPage = () => {
             </div>
           </div>
         </section>
+        </> : <div>Loading...</div>}
       </main>
       <Footer
         theme={{
@@ -97,4 +113,4 @@ const Creator: NextPage = () => {
   );
 };
 
-export default Creator;
+export default CreatorPage;
