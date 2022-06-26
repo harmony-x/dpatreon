@@ -5,7 +5,7 @@ import CreatorShowcase from "$layouts/CreatorShowcase/CreatorShowcase";
 import Footer from "$layouts/Footer/Footer";
 import UserPageHeader from "$layouts/UserPageHeader/UserPageHeader";
 import UserFooterLogo from "$svg/user_footer_logo";
-import { creatorMembership, creatorPostCardData } from "$utils/data";
+import { creatorPostCardData } from "$utils/data";
 import { Creator, getCreators } from "actions";
 import type { NextPage } from "next";
 import Head from "next/head";
