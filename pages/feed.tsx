@@ -13,8 +13,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 const Home: NextPage = () => {
-  const { account } =
-    useWeb3React();
+  const { account } = useWeb3React();
   return (
     <div className="bg-white min-h-screen">
       <Head>
@@ -29,6 +28,7 @@ const Home: NextPage = () => {
               centerColumn={<FeedPosts />}
               leftColumn={
                 <ProfileCard
+                  profileLink={`/creator/${account}/`}
                   CTAButton={
                     <Button
                       px="px-4 md:px-6"
