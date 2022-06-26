@@ -35,6 +35,7 @@ module.exports = {
         footerBorderColor: "rgb(189, 189, 189)",
         primary: "#8247E5",
         lightPurple: "#F3EDFC",
+        red: "#E23B49"
       },
       borderRadius: {
         'xs': '0.03125rem',
