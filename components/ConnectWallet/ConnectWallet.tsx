@@ -48,6 +48,8 @@ const ConnectWallet: FC<ConnectWalletProps> = ({ isOpen, setIsOpen }) => {
               disabled={disabled}
               key={index}
               onClick={async () => {
+                if (typeof window.ethereum !== "undefined")
+                  return alert("Metamask is not installed");
                 await activate(connectors.injected);
                 if (typeof chainId !== "undefined" && chainId !== 80001) {
                   deactivate();

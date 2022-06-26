@@ -57,6 +57,7 @@ export const refreshCache = async (activate: any) => {
   if (typeof window !== "undefined") {
     const provider = window.localStorage.getItem("provider");
     if (provider && provider in connectors) {
+      if(typeof window.ethereum !== 'undefined') return alert("Metamask is not installed")
       await activate(connectors[provider! as "injected"]);
     }
   }

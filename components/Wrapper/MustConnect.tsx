@@ -17,6 +17,8 @@ const MustConnect: FC<MustConnectProps> = ({ children }) => {
         px="px-4 md:px-6"
         height="h-12 md:h-55px"
         onClick={async () => {
+          if (typeof window.ethereum !== "undefined")
+            return alert("Metamask is not installed");
           await activate(connectors.injected);
           if (typeof chainId !== "undefined" && chainId !== 80001) {
             deactivate();
