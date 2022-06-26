@@ -44,6 +44,10 @@
 @tailwind utilities;
 
 @layer base {
+  input,
+  button {
+    @apply focus-visible:outline-none;
+  }
   .landing-page-bg {
     background-image: url("https://res.cloudinary.com/dexg5uy3d/image/upload/v1655589212/landing-page-bg_i7fddv.png");
     @apply bg-no-repeat bg-cover bg-center;

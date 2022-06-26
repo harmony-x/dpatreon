@@ -1,5 +1,5 @@
-import { CreatorType } from "$types/creatorpage";
+import { Creator } from "actions";
 
 export type CreatorSearchProps = {
-  creators: CreatorType[];
+  creators: Creator[];
 }
