@@ -20,7 +20,7 @@ const MustConnect: FC<MustConnectProps> = ({ children }) => {
           if (typeof window.ethereum === "undefined")
             return alert("Metamask is not installed");
           await activate(connectors.injected);
-          if (typeof chainId !== "undefined" && chainId !== 80001) {
+          if (typeof chainId == "undefined" && chainId !== 80001) {
             deactivate();
             return alert("You must be connected to the Polygon Testnet");
           }
