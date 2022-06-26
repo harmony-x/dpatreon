@@ -1,11 +1,17 @@
 import ChoiceCard from "$components/ChoiceCard/ChoiceCard";
 import Modal from "$components/Modal/Modal";
 import { networkOptions, walletOptions } from "$utils/data";
+import { useWeb3React } from "@web3-react/core";
+import { connectors } from "../../connectors";
 import { FC, useState } from "react";
 import { ConnectWalletProps } from "./ConnectWallet.types";
 
 const ConnectWallet: FC<ConnectWalletProps> = ({ isOpen, setIsOpen }) => {
   const [selectedNetwork, setSelectedNetwork] = useState(networkOptions[0]);
+  const { activate, chainId, deactivate } = useWeb3React();
+  const setProvider = (type: string) => {
+    window.localStorage.setItem("provider", type);
+  };
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Connect your wallet">
       <section className="font-Montserrat">
@@ -27,7 +33,6 @@ const ConnectWallet: FC<ConnectWalletProps> = ({ isOpen, setIsOpen }) => {
               selected={selectedNetwork.title === title}
               key={index}
               onClick={() => {
-                console.log(selectedNetwork);
                 setSelectedNetwork(networkOptions[index]);
               }}
             />
@@ -43,8 +48,14 @@ const ConnectWallet: FC<ConnectWalletProps> = ({ isOpen, setIsOpen }) => {
               title={title}
               disabled={disabled}
               key={index}
-              onClick={() => {
-                // Try to connect wallet here
+              onClick={async () => {
+                await activate(connectors.injected);
+                if (typeof chainId !== "undefined" && chainId !== 80001) {
+                  deactivate();
+                  return alert("You must be connected to the Polygon Testnet");
+                }
+                setProvider("injected");
+                setIsOpen(false);
               }}
             />
           ))}
