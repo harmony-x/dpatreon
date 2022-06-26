@@ -8,4 +8,6 @@ export type SearchBoxProps = {
   className?: string,
   rightSpacing?: string,
   leftPosition: string,
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void,
+  containerClassName?: string,
 }
