@@ -17,12 +17,16 @@ const Home: NextPage = () => {
         <meta name="description" content="Dpatreon Landing page" />
       </Head>
 
-      <main className='font-Gilroy lg3:container mx-auto px-6 md:px-12 lg:px-24 mb-16 bg-white'>
-        <LandingPageHeader setIsOpen={setIsOpen} />
+      <main className='font-Gilroy mb-16 bg-white'>
+        <div className='lg3:container mx-auto px-6 md:px-12 lg:px-24'>
+          <LandingPageHeader setIsOpen={setIsOpen} />
+        </div>
         <LandingPageHero setIsOpen={setIsOpen} />
-        <LandingPageHowTo />
-        <h2 className={`font-bold not-italic font-Montserrat text-2xl md:text-3xl lg2:text-4xl lg3:text-6xl text-black mt-16 mb-6 md:mb-16 text-center`}>It’s <span className='text-primary'>easier</span> than you think</h2>
-        <div className='w-full h-488px lg2:h-734px md:h-600px showcase-bg'></div>
+        <div className='lg3:container mx-auto px-6 md:px-12 lg:px-24'>
+          <LandingPageHowTo />
+          <h2 className={`font-bold not-italic font-Montserrat text-2xl md:text-3xl lg2:text-4xl lg3:text-6xl text-black mt-16 mb-6 md:mb-16 text-center`}>It’s <span className='text-primary'>easier</span> than you think</h2>
+          <div className='w-full h-488px lg2:h-734px md:h-600px showcase-bg'></div>
+        </div>
       </main>
       <div className='bg-white'>
         <Footer theme={{fill: "#333333", text1: "text-black", text2: "text-black", LogoSVG: UserFooterLogo}} />
