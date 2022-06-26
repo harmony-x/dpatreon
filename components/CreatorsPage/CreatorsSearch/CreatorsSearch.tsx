@@ -26,7 +26,7 @@ const CreatorsSearch : FC<CreatorSearchProps> = ({creators}) => {
                     </div>
                     </div>
                     <div>
-                      <p className="flex flex-col">
+                      <p className="flex flex-col items-center md:items-start">
                         <span className="text-black font-semibold text-base">{creator.patrons}</span>
                         <span className="uppercase text-xs text-black text-opacity-60 font-normal">patrons</span>
                       </p>
