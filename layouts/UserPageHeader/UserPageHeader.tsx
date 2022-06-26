@@ -3,6 +3,7 @@ import SearchBox from "$components/SearchBox/SearchBox";
 import UserAvartar from "$svg/user_avartar";
 import UserHeaderLogo from "$svg/user_header_logo";
 import UserHeaderSearchIcon from "$svg/user_search_header_icon";
+import { refreshCache } from "$utils/wallet";
 import { useWeb3React } from "@web3-react/core";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -12,7 +13,8 @@ import { UserPageHeaderProps } from "./UserPageHeader.types";
 const UserPageHeader : FC<UserPageHeaderProps> = ({className}) => {
   const [search, setSearch] = React.useState<string>("");
   const router = useRouter();
-  const { active } = useWeb3React();
+  const { active, activate } = useWeb3React();
+  refreshCache(activate);
 
   const handleInputSearch = (e : React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
