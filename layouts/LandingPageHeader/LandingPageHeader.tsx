@@ -1,7 +1,7 @@
 import Button from "$components/Button/Button";
 import LandingPageLogo from "$svg/landing_page_logo";
 import UserFooterLogo from "$svg/user_footer_logo";
-import { truncateAddress } from "$utils/wallet";
+import { refreshCache, truncateAddress } from "$utils/wallet";
 import { useWeb3React } from "@web3-react/core";
 import Link from "next/link";
 import router from "next/router";
@@ -12,8 +12,8 @@ interface LandingPageHeaderProps {
 }
 
 const LandingPageHeader: FC<LandingPageHeaderProps> = ({ setIsOpen }) => {
-  const { library, chainId, account, activate, deactivate, active } =
-    useWeb3React();
+  const { account, active, activate } = useWeb3React();
+  refreshCache(activate);
   return (
     <header className="py-6 lg:py-9 flex flex-col md:flex-row justify-between items-center">
       <Link href="/">

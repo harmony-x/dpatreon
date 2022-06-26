@@ -5,13 +5,12 @@ import { useWeb3React } from "@web3-react/core";
 import { connectors } from "../../connectors";
 import { FC, useState } from "react";
 import { ConnectWalletProps } from "./ConnectWallet.types";
+import { setProvider } from "$utils/wallet";
 
 const ConnectWallet: FC<ConnectWalletProps> = ({ isOpen, setIsOpen }) => {
   const [selectedNetwork, setSelectedNetwork] = useState(networkOptions[0]);
   const { activate, chainId, deactivate } = useWeb3React();
-  const setProvider = (type: string) => {
-    window.localStorage.setItem("provider", type);
-  };
+
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Connect your wallet">
       <section className="font-Montserrat">
@@ -49,6 +48,8 @@ const ConnectWallet: FC<ConnectWalletProps> = ({ isOpen, setIsOpen }) => {
               disabled={disabled}
               key={index}
               onClick={async () => {
+                if (typeof window.ethereum === "undefined")
+                  return alert("Metamask is not installed");
                 await activate(connectors.injected);
                 if (typeof chainId !== "undefined" && chainId !== 80001) {
                   deactivate();
