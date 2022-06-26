@@ -5,4 +5,5 @@ export type ProfileCardProps = {
   creation: string;
   patrons: number;
   CTAButton: React.ReactNode
+  profileLink?: string;
 }
