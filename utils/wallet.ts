@@ -32,10 +32,12 @@ const handleClick = async () => {
   // setTimeout(() => router.push(routeNames.dashboard), 1000);
 };
 
-export const truncateAddress = (address: string) => {
+export const truncateAddress = (address: string, long = false) => {
   if (!address) return "No Account";
   const match = address.match(
-    /^(0x[a-zA-Z0-9]{2})[a-zA-Z0-9]+([a-zA-Z0-9]{2})$/
+    long
+      ? /^(0x[a-zA-Z0-9]{10})[a-zA-Z0-9]+([a-zA-Z0-9]{3})$/
+      : /^(0x[a-zA-Z0-9]{2})[a-zA-Z0-9]+([a-zA-Z0-9]{2})$/
   );
   if (!match) return address;
   return `${match[1]}…${match[2]}`;
