@@ -15,11 +15,13 @@
     "@web3-react/injected-connector": "^6.0.7",
     "@web3-react/walletconnect-connector": "^6.2.13",
     "@web3-react/walletlink-connector": "^6.2.14",
+    "axios": "^0.27.2",
     "ethers": "^5.6.9",
     "ipfs-http-client": "^57.0.1",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-query": "^3.39.1",
     "web3modal": "^1.9.8"
   },
   "devDependencies": {
