@@ -8,5 +8,5 @@ export const patreonContract = (provider: any) => {
 
 export const subscriptionContract = (provider: any) => {
   const signer = provider.getSigner();
-  return PatreonThreeSubscription__factory.connect("0x90baD916F53d7388aC82e772e5cb7b54eADe6EE7", signer)
+  return PatreonThreeSubscription__factory.connect("0xeB273128a8A5F8a01756ec2ec11178eB2696d19C", signer)
 };

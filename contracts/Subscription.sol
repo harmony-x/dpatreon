@@ -49,7 +49,7 @@ contract PatreonThreeSubscription is ERC721URIStorage {
         subscriptions[newItemId].tierId = _tierId;
 
         _tokenIds.increment();
-        payable(msg.sender).transfer(msg.value);
+        payable(_creator).transfer(msg.value);
         return newItemId;
     }
 
