@@ -8,16 +8,22 @@ import { getCreators } from "actions";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 import { useQuery } from "react-query";
 
 const Home: NextPage = () => {
-  const [search, setSearch] = React.useState("");
+  const {query} = useRouter();
+  const [search, setSearch] = React.useState<string>(query?.name as string || "");
   const { data, isLoading, isError } = useQuery("posts", getCreators);
   const handleInputSearch = (e : React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   }
-  console.log(data)
+
+  React.useEffect(() => {
+    if(query?.name) setSearch(query?.name as string)
+  }, [query])
+
   return (
     <div className="bg-white min-h-screen">
       <Head>
@@ -39,7 +45,7 @@ const Home: NextPage = () => {
               onChange={handleInputSearch}
             />
           </div>
-          <p className="mb-6 text-black font-semibold text-center md:text-left">{!search ? "List of creators" : `Results for ${search}`}</p>
+          {search && <p className="mb-6 text-black font-semibold text-center md:text-left">{!search ? "List of creators" : `Results for ${search}`}</p>}
           {isLoading ? <div className="relative w-full h-36"><Image src="/load.gif" alt="" layout="fill" /></div> : isError || !data ? <p className="mb-6 text-red-600 font-semibold text-center md:text-left">Error loading creators</p> : <CreatorsSearch creators={search ? data.filter(item => item.name.toLowerCase().includes(search.toLowerCase())) : data} />}
         </div>
       </main>
