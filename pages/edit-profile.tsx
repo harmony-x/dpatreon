@@ -1,5 +1,6 @@
 import { BasicPanel } from "$components/UserPage/BasicPanel/BasicPanel";
 import EditProfileTab from "$components/UserPage/EditProfileTab/EditProfileTab";
+import { PreviewPanel } from "$components/UserPage/PreviewPanel/PreviewPanel";
 import { TierPanel } from "$components/UserPage/TiersPanel/TiersPanel";
 import MustConnect from "$components/Wrapper/MustConnect";
 import Footer from "$layouts/Footer/Footer";
@@ -32,7 +33,7 @@ const EditProfile: NextPage = () => {
                 />
               }
               middlePanel={<TierPanel />}
-              rightTabPanel={<></>}
+              rightTabPanel={<PreviewPanel/>}
             />
           </MustConnect>
         </div>
