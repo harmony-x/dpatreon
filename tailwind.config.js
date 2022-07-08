@@ -99,6 +99,10 @@ module.exports = {
         "445px": "27.8125rem",
         "768px": "48rem",
       },
+      boxShadow: {
+        "dropdown-shadow":
+          "-2px -2px 5px 2px rgba(0, 0, 0, 0.05), 2px 2px 5px 2px rgba(0, 0, 0, 0.05)",
+      },
     },
   },
   plugins: [],
