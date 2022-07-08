@@ -11,6 +11,7 @@ const Button: FC<ButtonProps> = ({
   height,
   px,
   link,
+  target,
 }) => {
   return !link ? (
     <button
@@ -37,6 +38,7 @@ const Button: FC<ButtonProps> = ({
   ) : (
     <Link href={link}>
       <a
+        target={target}
         className={`not-italic rounded-4xl flex items-center justify-center  ${
           type === "primary"
             ? "bg-primary text-white text-base font-semibold"

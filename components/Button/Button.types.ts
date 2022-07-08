@@ -7,4 +7,5 @@ export type ButtonProps = {
   height: string;
   px: string;
   link?: string;
+  target?: string;
 };
