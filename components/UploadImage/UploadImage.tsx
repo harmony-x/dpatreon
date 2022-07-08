@@ -11,6 +11,7 @@ const UploadImage: FC<UploadImageProps> = ({
   setFile,
   setFileLoader,
   id,
+  labelWidth = "w-full md:w-max",
 }) => {
   const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0" as any);
 
@@ -47,7 +48,7 @@ const UploadImage: FC<UploadImageProps> = ({
         <label
           key={gap}
           htmlFor="image"
-          className={`flex items-start w-full md:w-max`}
+          className={`flex items-start ${labelWidth}`}
         >
           <div className="sr-only">{labelComponent}</div>
           <input

@@ -11,4 +11,5 @@ export type UploadImageProps = {
   InputComponent: React.ReactNode;
   gap?: string;
   id: string;
+  labelWidth?: string;
 };
