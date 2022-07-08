@@ -32,7 +32,7 @@ const Dashboard: NextPage = () => {
                 <AccountDetails
                   walletAddress={account || ""}
                   balance={5}
-                  link="/dashboard"
+                  link={`https://mumbai.polygonscan.com/address/${account}`}
                 />
               }
               rightColumn={
