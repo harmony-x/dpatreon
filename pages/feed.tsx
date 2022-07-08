@@ -1,5 +1,5 @@
 import Button from "$components/Button/Button";
-import FinishProfileCard from "$components/UserPage/FinishProfileCard/FinishProfileCard";
+import ActionCard from "$components/UserPage/ActionCard/ActionCard";
 import ProfileCard from "$components/UserPage/ProfileCard/ProfileCard";
 import MustConnect from "$components/Wrapper/MustConnect";
 import FeedPosts from "$layouts/FeedPosts/FeedPosts";
@@ -44,7 +44,27 @@ const Home: NextPage = () => {
                   userName={truncateAddress(account!, true)}
                 />
               }
-              rightColumn={<FinishProfileCard />}
+              rightColumn={
+                <ActionCard
+                  button={
+                    <Button
+                      px="px-5"
+                      height="h-42px"
+                      link="/edit-profile"
+                      text="Finish my page"
+                      type="card1"
+                      className="inline-block"
+                    />
+                  }
+                  text={
+                    <>
+                      You’re almost there! Complete{" "}
+                      <br className="hidden md:block" /> your page and take it
+                      live.
+                    </>
+                  }
+                />
+              }
             />
           </div>
         </MustConnect>
