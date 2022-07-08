@@ -29,7 +29,6 @@ const CustomLink = forwardRef<
 
 const MenuDropdown: React.FC<MenuDropdownProps> = ({ button, links }) => {
   const router = useRouter();
-  console.log(router);
   return (
     <Menu className="relative z-50" as="div">
       <Menu.Button>{button}</Menu.Button>
