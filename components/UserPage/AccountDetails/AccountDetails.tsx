@@ -15,7 +15,19 @@ const AccountDetails: FC<AccountDetailsProps> = ({
       <div className="px-7 flex sm:flex-row flex-col gap-3 sm:gap-0 justify-between items-center border-b-xs border-opacity-20 border-gray3 pb-4">
         <div>
           <h2 className="text-lg font-medium text-black mb-1">Account 1</h2>
-          <p className="text-base font-normal text-black text-opacity-60 flex items-center">
+          <p
+            onClick={() => {
+              navigator.clipboard.writeText(walletAddress).then(
+                function () {
+                  alert("Copied!");
+                },
+                function (err) {
+                  console.error("Async: Could not copy text: ", err);
+                }
+              );
+            }}
+            className="text-base font-normal text-black text-opacity-60 flex items-center cursor-pointer"
+          >
             <span>{truncateAddress(walletAddress)}</span>
             <Copy className="ml-1" />
           </p>
@@ -23,9 +35,10 @@ const AccountDetails: FC<AccountDetailsProps> = ({
         <Button
           height="h-8"
           px="px-3"
-          text="View Account on Etherscan"
+          text="View Account on Polygon"
           type="default"
           link={link}
+          target="_blank"
         />
       </div>
       <div className="px-7 flex items-center mt-11">
