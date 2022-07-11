@@ -6,9 +6,11 @@ export type PostCardType = {
   likes: number;
   creatorId: string;
   locked: boolean;
-}
+  id: number;
+  liked: boolean;
+};
 
 export type FileType = {
-  file: string | null, 
-  fileLoader: boolean
-}
+  file: string | null;
+  fileLoader: boolean;
+};
