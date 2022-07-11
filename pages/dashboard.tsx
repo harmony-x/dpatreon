@@ -11,11 +11,22 @@ import UserPageHeader from "$layouts/UserPageHeader/UserPageHeader";
 import UserFooterLogo from "$svg/user_footer_logo";
 import { truncateAddress } from "$utils/wallet";
 import { useWeb3React } from "@web3-react/core";
+import { getCreators, getPosts } from "actions";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useQuery } from "react-query";
 
 const Dashboard: NextPage = () => {
+  const { data, isLoading, isSuccess } = useQuery("creators", getCreators);
+  const {
+    data: creatorPostsData,
+    isLoading: isLoadingCreatorPosts,
+    error: isCreatorPostsError,
+  } = useQuery("creatorPosts", getPosts);
   const { account } = useWeb3React();
+  const creator = data?.find((c) => c.creatorAddress === account);
+  const isPost = creatorPostsData?.find((c) => c.author === account);
+
   return (
     <div className="bg-white min-h-screen">
       <Head>
@@ -37,7 +48,10 @@ const Dashboard: NextPage = () => {
               }
               rightColumn={
                 <>
-                  <UserStats patrons={0} price={3} />
+                  <UserStats
+                    patrons={creator?.patrons || 0}
+                    price={creator?.tiers[0]?.price || 0}
+                  />
                   <div className="mt-5">
                     <ActionCard
                       button={
@@ -50,7 +64,24 @@ const Dashboard: NextPage = () => {
                           className="w-max"
                         />
                       }
-                      text={<>You haven’t posted anything yet</>}
+                      text={
+                        creatorPostsData ? (
+                          <>
+                            {isPost ? (
+                              <Button
+                                px="px-5"
+                                height="h-42px"
+                                link="/create-post"
+                                text="View all posts"
+                                type="card2"
+                                className="w-max"
+                              />
+                            ) : (
+                              "You haven’t posted anything yet"
+                            )}
+                          </>
+                        ) : null
+                      }
                     />
                   </div>
                 </>
