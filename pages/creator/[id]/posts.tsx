@@ -133,27 +133,24 @@ const CreatorPosts: NextPage = () => {
                             px="px-4 md:px-6"
                             height="h-42px"
                             onClick={() => {
-                              if (
-                                followings?.length &&
-                                typeof account === "string"
-                              ) {
-                                followings?.includes(account)
+                              if (followings?.length) {
+                                followings?.includes(creator.creatorAddress)
                                   ? setFollowings(
                                       followings.filter(
-                                        (item) => item !== account
+                                        (item) =>
+                                          item !== creator.creatorAddress
                                       )
                                     )
-                                  : setFollowings([...followings, account]);
-                              } else if (
-                                (!followings?.length || !followings) &&
-                                typeof account === "string"
-                              ) {
-                                setFollowings([account]);
+                                  : setFollowings([
+                                      ...followings,
+                                      creator.creatorAddress,
+                                    ]);
+                              } else if (!followings?.length || !followings) {
+                                setFollowings([creator.creatorAddress]);
                               }
                             }}
                             text={
-                              typeof account === "string" &&
-                              followings?.includes(account)
+                              followings?.includes(creator.creatorAddress)
                                 ? "Following"
                                 : "Follow"
                             }
