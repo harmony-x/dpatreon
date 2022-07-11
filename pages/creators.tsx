@@ -13,16 +13,18 @@ import React from "react";
 import { useQuery } from "react-query";
 
 const Home: NextPage = () => {
-  const {query} = useRouter();
-  const [search, setSearch] = React.useState<string>(query?.name as string || "");
-  const { data, isLoading, isError } = useQuery("posts", getCreators);
-  const handleInputSearch = (e : React.ChangeEvent<HTMLInputElement>) => {
+  const { query } = useRouter();
+  const [search, setSearch] = React.useState<string>(
+    (query?.name as string) || ""
+  );
+  const { data, isLoading, isError } = useQuery("creators", getCreators);
+  const handleInputSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
-  }
+  };
 
   React.useEffect(() => {
-    if(query?.name) setSearch(query?.name as string)
-  }, [query])
+    if (query?.name) setSearch(query?.name as string);
+  }, [query]);
 
   return (
     <div className="bg-white min-h-screen">
@@ -45,8 +47,30 @@ const Home: NextPage = () => {
               onChange={handleInputSearch}
             />
           </div>
-          {search && <p className="mb-6 text-black font-semibold text-center md:text-left">{!search ? "List of creators" : `Results for ${search}`}</p>}
-          {isLoading ? <div className="relative w-full h-36"><Image src="/load.gif" alt="" layout="fill" /></div> : isError || !data ? <p className="mb-6 text-red-600 font-semibold text-center md:text-left">Error loading creators</p> : <CreatorsSearch creators={search ? data.filter(item => item.name.toLowerCase().includes(search.toLowerCase())) : data} />}
+          {search && (
+            <p className="mb-6 text-black font-semibold text-center md:text-left">
+              {!search ? "List of creators" : `Results for ${search}`}
+            </p>
+          )}
+          {isLoading ? (
+            <div className="relative w-full h-36">
+              <Image src="/load.gif" alt="" layout="fill" />
+            </div>
+          ) : isError || !data ? (
+            <p className="mb-6 text-red-600 font-semibold text-center md:text-left">
+              Error loading creators
+            </p>
+          ) : (
+            <CreatorsSearch
+              creators={
+                search
+                  ? data.filter((item) =>
+                      item.name.toLowerCase().includes(search.toLowerCase())
+                    )
+                  : data
+              }
+            />
+          )}
         </div>
       </main>
       <Footer
