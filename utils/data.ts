@@ -9,6 +9,21 @@ import Coinbase1 from "$png/coinbase1";
 import Coinbase2 from "$svg/coinbase2";
 import { PostCardType } from "$types/userpage";
 
+export const months: string[] = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 export const dropdownLinks: { text: string; href: string }[] = [
   {
     text: "My page",
@@ -113,60 +128,4 @@ export const walletOptions: ChoiceCardType[] = [
   //   icon: Coinbase2(),
   //   title: 'Coinbase Wallet',
   // }
-];
-
-export const postCardData: PostCardType[] = [
-  {
-    image:
-      "https://res.cloudinary.com/dexg5uy3d/image/upload/v1655462407/Rectangle_206_c3krrf.png",
-    time: "JUNE 1 AT 8:26 AM",
-    title: `How NOT to Select White on White in Photoshop! - Finished PSD Download`,
-    tags: ["Photoshop Tutorial", "Arts & Design"],
-    likes: 946,
-    creatorId: "1",
-    locked: false,
-  },
-  {
-    image:
-      "https://res.cloudinary.com/dexg5uy3d/image/upload/v1655462407/Rectangle_206_c3krrf.png",
-    time: "JUNE 1 AT 8:26 AM",
-    title: `How NOT to Select White on White in Photoshop! - Finished PSD Download`,
-    tags: ["Photoshop Tutorial", "Arts & Design"],
-    likes: 946,
-    creatorId: "2",
-    locked: true,
-  },
-  {
-    image:
-      "https://res.cloudinary.com/dexg5uy3d/image/upload/v1655462407/Rectangle_206_c3krrf.png",
-    time: "JUNE 1 AT 8:26 AM",
-    title: `How NOT to Select White on White in Photoshop! - Finished PSD Download`,
-    tags: ["Photoshop Tutorial", "Arts & Design"],
-    likes: 946,
-    creatorId: "3",
-    locked: true,
-  },
-];
-
-export const creatorPostCardData: PostCardType[] = [
-  {
-    image:
-      "https://res.cloudinary.com/dexg5uy3d/image/upload/v1655462407/Rectangle_206_c3krrf.png",
-    time: "JUNE 1 AT 8:26 AM",
-    title: `How NOT to Select White on White in Photoshop! - Finished PSD Download`,
-    tags: ["Photoshop Tutorial", "Arts & Design"],
-    likes: 946,
-    creatorId: "2",
-    locked: true,
-  },
-  {
-    image:
-      "https://res.cloudinary.com/dexg5uy3d/image/upload/v1655462407/Rectangle_206_c3krrf.png",
-    time: "JUNE 1 AT 8:26 AM",
-    title: `(Fast Pass) MPL Ep 103 - High-Res Artwork + Discussion`,
-    tags: ["Photoshop Tutorial", "Arts & Design"],
-    likes: 946,
-    creatorId: "4",
-    locked: true,
-  },
 ];
