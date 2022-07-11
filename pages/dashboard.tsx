@@ -26,7 +26,7 @@ const Dashboard: NextPage = () => {
   } = useQuery("creatorPosts", getPosts);
   const { account } = useWeb3React();
   const creator = data?.find((c) => c.creatorAddress === account);
-  const isPost = creatorPostsData?.find((c) => c.author === account);
+  const isPost = creatorPostsData?.some((c) => c.author === account);
 
   return (
     <div className="bg-white min-h-screen">
