@@ -76,6 +76,7 @@ module.exports = {
         xs: "0.75rem",
       },
       minHeight: {
+        "50vh": "50vh",
         "133px": "8.3125rem",
         "200px": "12.5rem",
         "253px": "15.8125rem",
