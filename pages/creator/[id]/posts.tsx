@@ -47,7 +47,7 @@ const CreatorPosts: NextPage = () => {
   React.useEffect(() => {
     if (query?.id && creatorPostsData) {
       setPosts(
-        creatorPostsData.filter(({ author }) => author !== query?.id) || null
+        creatorPostsData.filter(({ author }) => author === query?.id) || null
       );
     }
   }, [query, creatorPostsData]);
@@ -76,35 +76,39 @@ const CreatorPosts: NextPage = () => {
                         {
                           value: (
                             <div className="flex flex-col gap-8">
-                              {posts
-                                ?.map(
-                                  ({
-                                    author,
-                                    created_at,
-                                    id,
-                                    image,
-                                    tags,
-                                    text,
-                                    tier,
-                                    likes,
-                                  }) => ({
-                                    image,
-                                    tags: tags.split("|"),
-                                    time: formatDate(created_at),
-                                    title: text,
-                                    likes: likes.length,
-                                    creatorId: author,
-                                    locked: tier === -1 ? false : true,
-                                    id,
-                                    liked:
-                                      likes.some(
-                                        ({ author }) => author === account
-                                      ) || false,
-                                  })
-                                )
-                                .map((item, index) => (
-                                  <PostCard {...item} key={index} />
-                                ))}
+                              {posts && posts.length ? (
+                                posts
+                                  .map(
+                                    ({
+                                      author,
+                                      created_at,
+                                      id,
+                                      image,
+                                      tags,
+                                      text,
+                                      tier,
+                                      likes,
+                                    }) => ({
+                                      image,
+                                      tags: tags.split("|"),
+                                      time: formatDate(created_at),
+                                      title: text,
+                                      likes: likes.length,
+                                      creatorId: author,
+                                      locked: tier === -1 ? false : true,
+                                      id,
+                                      liked:
+                                        likes.some(
+                                          ({ author }) => author === account
+                                        ) || false,
+                                    })
+                                  )
+                                  .map((item, index) => (
+                                    <PostCard {...item} key={index} />
+                                  ))
+                              ) : (
+                                <>No posts from creator</>
+                              )}
                             </div>
                           ),
                           name: "Posts",

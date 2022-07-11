@@ -43,7 +43,7 @@ const CreatorPage: NextPage = () => {
   React.useEffect(() => {
     if (query?.id && creatorPostsData) {
       setPosts(
-        creatorPostsData.filter(({ author }) => author !== query?.id) || null
+        creatorPostsData.filter(({ author }) => author === query?.id) || null
       );
     }
   }, [query, creatorPostsData]);
