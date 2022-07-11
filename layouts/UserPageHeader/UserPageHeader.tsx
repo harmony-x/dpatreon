@@ -59,10 +59,10 @@ const UserPageHeader: FC<UserPageHeaderProps> = ({ className }) => {
         <div className="flex flex-col md:flex-row items-center">
           <MenuDropdown
             button={
-              <button className="flex h-8 py-2 px-3 rounded-4.5xl border-xs border-gray9 items-center text-xs font-light text-gray8 text-opacity-60 mr-0 md:mr-4 mb-3 md:mb-0">
+              <div className="flex h-8 py-2 px-3 rounded-4.5xl border-xs border-gray9 items-center text-xs font-light text-gray8 text-opacity-60 mr-0 md:mr-4 mb-3 md:mb-0">
                 <PolygonM /> <span className="inline-block mx-1">Polygon</span>{" "}
                 <ArrowDown />
-              </button>
+              </div>
             }
             links={dropdownLinks}
           />
