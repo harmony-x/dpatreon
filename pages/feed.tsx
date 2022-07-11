@@ -9,11 +9,15 @@ import UserPageHeader from "$layouts/UserPageHeader/UserPageHeader";
 import UserFooterLogo from "$svg/user_footer_logo";
 import { truncateAddress } from "$utils/wallet";
 import { useWeb3React } from "@web3-react/core";
+import { getCreators } from "actions";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useQuery } from "react-query";
 
 const Home: NextPage = () => {
+  const { data, isLoading, isSuccess } = useQuery("creators", getCreators);
   const { account } = useWeb3React();
+  const creator = data?.find((c) => c.creatorAddress === account);
   return (
     <div className="bg-white min-h-screen">
       <Head>
@@ -39,8 +43,8 @@ const Home: NextPage = () => {
                       className="w-full"
                     />
                   }
-                  creation=""
-                  patrons={0}
+                  creation={creator?.isAreCreating || ""}
+                  patrons={creator?.patrons || 0}
                   userName={truncateAddress(account!, true)}
                 />
               }
@@ -51,17 +55,23 @@ const Home: NextPage = () => {
                       px="px-5"
                       height="h-42px"
                       link="/edit-profile"
-                      text="Finish my page"
+                      text={!creator ? "Finish my page" : "Edit profile"}
                       type="card1"
                       className="inline-block"
                     />
                   }
                   text={
-                    <>
-                      You’re almost there! Complete{" "}
-                      <br className="hidden md:block" /> your page and take it
-                      live.
-                    </>
+                    !creator ? (
+                      <>
+                        You’re almost there! Complete{" "}
+                        <br className="hidden md:block" /> your page and take it
+                        live.
+                      </>
+                    ) : (
+                      <>
+                        Your page is complete, you can always edit your profile
+                      </>
+                    )
                   }
                 />
               }
