@@ -1,4 +1,5 @@
 import MembershipCard from "$components/CreatorPage/MembershipCard/MembershipCard";
+import Loading from "$components/Loading/Loading";
 import MustConnect from "$components/Wrapper/MustConnect";
 import CreatorShowcase from "$layouts/CreatorShowcase/CreatorShowcase";
 import UserPageHeader from "$layouts/UserPageHeader/UserPageHeader";
@@ -76,7 +77,9 @@ const Creator: NextPage = () => {
             </>
           </MustConnect>
         ) : (
-          <div>Loading...</div>
+          <div className="flex items-center justify-center min-h-50vh">
+            <Loading className="w-14 h-14 mt-16" />
+          </div>
         )}
       </main>
     </div>

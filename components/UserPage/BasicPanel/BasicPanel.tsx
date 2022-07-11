@@ -11,6 +11,7 @@ import { BasicPanelProps } from "./BasicPanel.types";
 import { Form, Formik } from "formik";
 import { useQuery } from "react-query";
 import { getCreators } from "actions";
+import Loading from "$components/Loading/Loading";
 
 const ProfilePhoto: React.FC<FileType> = ({ file, fileLoader }) => (
   <div
@@ -196,6 +197,8 @@ export const BasicPanel: React.FC<BasicPanelProps> = ({
       )}
     </Formik>
   ) : (
-    <>Loading...</>
+    <div className="flex items-center justify-center min-h-50vh">
+      <Loading className="w-14 h-14 mt-16" />
+    </div>
   );
 };

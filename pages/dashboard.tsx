@@ -1,4 +1,5 @@
 import Button from "$components/Button/Button";
+import Loading from "$components/Loading/Loading";
 import AccountDetails from "$components/UserPage/AccountDetails/AccountDetails";
 import ActionCard from "$components/UserPage/ActionCard/ActionCard";
 import ProfileCard from "$components/UserPage/ProfileCard/ProfileCard";
@@ -36,58 +37,66 @@ const Dashboard: NextPage = () => {
       <main className="font-Gilroy lg3:container mx-auto mb-24 lg:mb-32">
         <UserPageHeader className="px-2 md:px-7 lg:px-16" />
         <MustConnect>
-          <div className="px-6 md:px-12 lg:px-24 mt-12">
-            <h1 className="text-3xl text-black font-bold mb-7">Hi, Creator</h1>
-            <TwoColumnLayout
-              leftColumn={
-                <AccountDetails
-                  walletAddress={account || ""}
-                  balance={5}
-                  link={`https://mumbai.polygonscan.com/address/${account}`}
-                />
-              }
-              rightColumn={
-                <>
-                  <UserStats
-                    patrons={creator?.patrons || 0}
-                    price={creator?.tiers[0]?.price || 0}
+          {!isLoading || !isLoadingCreatorPosts ? (
+            <div className="px-6 md:px-12 lg:px-24 mt-12">
+              <h1 className="text-3xl text-black font-bold mb-7">
+                Hi, Creator
+              </h1>
+              <TwoColumnLayout
+                leftColumn={
+                  <AccountDetails
+                    walletAddress={account || ""}
+                    balance={5}
+                    link={`https://mumbai.polygonscan.com/address/${account}`}
                   />
-                  <div className="mt-5">
-                    <ActionCard
-                      button={
-                        <Button
-                          px="px-5"
-                          height="h-42px"
-                          link="/create-post"
-                          text="Make a post"
-                          type="card1"
-                          className="w-max"
-                        />
-                      }
-                      text={
-                        creatorPostsData ? (
-                          <>
-                            {isPost ? (
-                              <Button
-                                px="px-5"
-                                height="h-42px"
-                                link="/create-post"
-                                text="View all posts"
-                                type="card2"
-                                className="w-max"
-                              />
-                            ) : (
-                              "You haven’t posted anything yet"
-                            )}
-                          </>
-                        ) : null
-                      }
+                }
+                rightColumn={
+                  <>
+                    <UserStats
+                      patrons={creator?.patrons || 0}
+                      price={creator?.tiers[0]?.price || 0}
                     />
-                  </div>
-                </>
-              }
-            />
-          </div>
+                    <div className="mt-5">
+                      <ActionCard
+                        button={
+                          <Button
+                            px="px-5"
+                            height="h-42px"
+                            link="/create-post"
+                            text="Make a post"
+                            type="card1"
+                            className="w-max"
+                          />
+                        }
+                        text={
+                          creatorPostsData ? (
+                            <>
+                              {isPost ? (
+                                <Button
+                                  px="px-5"
+                                  height="h-42px"
+                                  link="/create-post"
+                                  text="View all posts"
+                                  type="card2"
+                                  className="w-max"
+                                />
+                              ) : (
+                                "You haven’t posted anything yet"
+                              )}
+                            </>
+                          ) : null
+                        }
+                      />
+                    </div>
+                  </>
+                }
+              />
+            </div>
+          ) : (
+            <div className="flex items-center justify-center min-h-50vh">
+              <Loading className="w-14 h-14 mt-16" />
+            </div>
+          )}
         </MustConnect>
       </main>
       <Footer

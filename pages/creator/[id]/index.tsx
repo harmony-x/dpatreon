@@ -1,5 +1,6 @@
 import Button from "$components/Button/Button";
 import MembershipCard from "$components/CreatorPage/MembershipCard/MembershipCard";
+import Loading from "$components/Loading/Loading";
 import PostCard from "$components/UserPage/PostCard/PostCard";
 import MustConnect from "$components/Wrapper/MustConnect";
 import useLocalStorage from "$hooks/useLocalStorage";
@@ -189,7 +190,9 @@ const CreatorPage: NextPage = () => {
             </>
           </MustConnect>
         ) : (
-          <div>Loading...</div>
+          <div className="flex items-center justify-center min-h-50vh">
+            <Loading className="w-14 h-14 mt-16" />
+          </div>
         )}
       </main>
       <Footer

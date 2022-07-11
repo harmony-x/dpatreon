@@ -1,5 +1,6 @@
 import Button from "$components/Button/Button";
 import MembershipCardTwo from "$components/CreatorPage/MembershipCardTwo/MembershipCardTwo";
+import Loading from "$components/Loading/Loading";
 import PostTabs from "$components/PostTabs/PostTabs";
 import PostCard from "$components/UserPage/PostCard/PostCard";
 import ProfileCard from "$components/UserPage/ProfileCard/ProfileCard";
@@ -188,7 +189,9 @@ const CreatorPosts: NextPage = () => {
             </>
           </MustConnect>
         ) : (
-          <div>Loading ...</div>
+          <div className="flex items-center justify-center min-h-50vh">
+            <Loading className="w-14 h-14 mt-16" />
+          </div>
         )}
       </main>
       <Footer

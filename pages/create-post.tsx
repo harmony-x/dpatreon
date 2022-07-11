@@ -11,7 +11,7 @@ import { postPost } from "actions";
 import type { NextPage } from "next";
 import Head from "next/head";
 import React, { useState } from "react";
-import { useMutation } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 
 const CreatePostPage: NextPage = () => {
   const { account } = useWeb3React();
@@ -21,7 +21,12 @@ const CreatePostPage: NextPage = () => {
   const [postDetails, setPostDetails] = useState<string>("");
   const [postTags, setPostTags] = useState<string[]>([]);
   const [permission, setPermission] = useState<string>("public");
-  const { data, isLoading, isError, mutate } = useMutation("posts", postPost);
+  const queryClient = useQueryClient();
+  const { data, isLoading, isError, mutate } = useMutation("posts", postPost, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(["creatorPosts"]);
+    },
+  });
   const validate = () => {
     if (
       postTitle.length < 1 ||
@@ -120,7 +125,9 @@ const CreatePostPage: NextPage = () => {
                     text="Publish now"
                     type="primary"
                     className={`w-full ${
-                      validate() ? " " : "bg-opacity-40 cursor-not-allowed"
+                      validate() || isLoading
+                        ? " "
+                        : "bg-opacity-40 cursor-not-allowed"
                     }`}
                     disabled={isLoading || !validate()}
                     onClick={handlePublish}
