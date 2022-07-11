@@ -45,7 +45,7 @@ export const Input: React.FC<InputProps> = ({
       onKeyDown={(e) => {
         if (e.key === "Enter") onEnter && onEnter();
       }}
-      required
+      required={isRequired}
     />
   </div>
 );
