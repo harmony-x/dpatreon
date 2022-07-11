@@ -43,6 +43,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+@keyframes lineAnim {
+  from {
+    transform: translate3d(-8px, 3px, 0);
+  }
+  to {
+    transform: translate3d(8px, 3px, 0);
+  }
+}
+
 @layer base {
   input,
   button {
@@ -58,5 +75,17 @@
   }
   .backdrop-filter {
     backdrop-filter: blur(30px);
+  }
+  .loading-bounce {
+    animation: bounce 0.5s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+    animation-iteration-count: infinite;
+  }
+  .loading-line {
+    animation: lineAnim 1s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
 }
