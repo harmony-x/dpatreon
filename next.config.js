@@ -2,9 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['res.cloudinary.com'],
-    formats: ['image/avif', 'image/webp']
-  }
-}
+    domains: ["res.cloudinary.com", "ipfs.infura.io"],
+    formats: ["image/avif", "image/webp"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
