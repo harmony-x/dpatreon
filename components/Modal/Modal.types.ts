@@ -6,4 +6,5 @@ export type ModalProps = {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   modalClassName?: string;
+  showCloseButton?: boolean;
 };

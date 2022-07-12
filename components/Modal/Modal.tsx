@@ -8,7 +8,8 @@ const Modal: FC<ModalProps> = ({
   isOpen,
   title,
   children,
-  modalClassName = "rounded-4xl w-11/12 max-w-5xl",
+  modalClassName = "rounded-4xl w-11/12 max-w-5xl py-9 md:py-12 lg2:py-14 px-6 md:px-12 lg:px-20",
+  showCloseButton = true,
 }) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -41,11 +42,13 @@ const Modal: FC<ModalProps> = ({
           <div
             className={`${
               modalClassName || ""
-            } md:absolute top-1/2 left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 m-auto py-9 md:py-12 lg2:py-14 px-6 md:px-12 lg:px-20 bg-white `}
+            } md:absolute top-1/2 left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 m-auto bg-white`}
           >
-            <button onClick={() => setIsOpen(false)}>
-              <ModalClose className="top-8 right-8 absolute w-10 h-10" />
-            </button>
+            {showCloseButton && (
+              <button onClick={() => setIsOpen(false)}>
+                <ModalClose className="top-8 right-8 absolute w-10 h-10" />
+              </button>
+            )}
             <div className="">
               <Dialog.Title className="sr-only">{title}</Dialog.Title>
             </div>
