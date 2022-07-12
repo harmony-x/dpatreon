@@ -1,9 +1,10 @@
 import Button from "$components/Button/Button";
+import JoinModal from "$components/JoinModal/JoinModal";
 import { subscriptionContract } from "$utils/contracts";
 import { useWeb3React } from "@web3-react/core";
 import { ethers } from "ethers";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { MembershipCardProps } from "./MembershipCard.types";
 
 const MembershipCard: FC<MembershipCardProps> = ({
@@ -15,6 +16,7 @@ const MembershipCard: FC<MembershipCardProps> = ({
   tierId,
   creator,
 }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { library } = useWeb3React();
   return (
     <article className="min-h-489px px-4 lg:px-8 py-8 flex flex-col items-center bg-white border-xs border-opacity-20 border-gray3 w-full">
@@ -23,9 +25,7 @@ const MembershipCard: FC<MembershipCardProps> = ({
         <Image
           layout="fill"
           objectFit="cover"
-          src={
-            image
-          }
+          src={image}
           alt={`Showcase image of ${title}`}
           unoptimized
         />
@@ -42,9 +42,10 @@ const MembershipCard: FC<MembershipCardProps> = ({
         px="px-10 md:px-12"
         height="h-42px"
         onClick={async () => {
-          await subscriptionContract(library).startSubscribe(creator, tierId, {
-            value: ethers.utils.parseEther(""+price),
-          });
+          // await subscriptionContract(library).startSubscribe(creator, tierId, {
+          //   value: ethers.utils.parseEther("" + price),
+          // });
+          setIsOpen(true);
         }}
         text="Join"
         type="card1"
@@ -60,9 +61,18 @@ const MembershipCard: FC<MembershipCardProps> = ({
           </li>
         ))}
       </ul>
-      <p className="text-sm font-light text-black text-opacity-60 self-start text-left">
-        
-      </p>
+      <p className="text-sm font-light text-black text-opacity-60 self-start text-left"></p>
+      <JoinModal
+        amount={price}
+        confirm={async () => {
+          await subscriptionContract(library).startSubscribe(creator, tierId, {
+            value: ethers.utils.parseEther("" + price),
+          });
+        }}
+        creatorAddress={creator}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
     </article>
   );
 };

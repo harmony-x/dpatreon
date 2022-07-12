@@ -27,7 +27,7 @@ export const months: string[] = [
 export const dropdownLinks: { text: string; href: string }[] = [
   {
     text: "My page",
-    href: "/edit-profile",
+    href: "/my-page",
   },
   {
     text: "My Dashboard",

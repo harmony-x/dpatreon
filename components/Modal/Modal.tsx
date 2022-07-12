@@ -1,7 +1,4 @@
-import {
-  FC,
-  Fragment,
-} from "react";
+import { FC, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ModalProps } from "./Modal.types";
 import ModalClose from "$svg/modal_close";
@@ -11,8 +8,9 @@ const Modal: FC<ModalProps> = ({
   isOpen,
   title,
   children,
+  modalClassName = "rounded-4xl w-11/12 max-w-5xl py-9 md:py-12 lg2:py-14 px-6 md:px-12 lg:px-20",
+  showCloseButton = true,
 }) => {
-
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
@@ -41,14 +39,18 @@ const Modal: FC<ModalProps> = ({
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          <div className='md:absolute top-1/2 left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 m-auto w-11/12 max-w-5xl py-9 md:py-12 lg2:py-14 px-6 md:px-12 lg:px-20 bg-white rounded-4xl'>
-            <button onClick={() => setIsOpen(false)}>
-              <ModalClose className="top-8 right-8 absolute w-10 h-10" />
-            </button>
+          <div
+            className={`${
+              modalClassName || ""
+            } md:absolute top-1/2 left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 m-auto bg-white`}
+          >
+            {showCloseButton && (
+              <button onClick={() => setIsOpen(false)}>
+                <ModalClose className="top-8 right-8 absolute w-10 h-10" />
+              </button>
+            )}
             <div className="">
-              <Dialog.Title className="sr-only">
-                {title}
-              </Dialog.Title>
+              <Dialog.Title className="sr-only">{title}</Dialog.Title>
             </div>
             {children}
           </div>

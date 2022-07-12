@@ -89,3 +89,18 @@
     animation-iteration-count: infinite;
   }
 }
+
+@layer components {
+  .c-top-loader {
+    @apply pointer-events-none;
+  }
+  .c-top-loader__bar {
+    @apply bg-primary h-1 fixed left-0 top-0 w-full;
+    z-index: 100000;
+  }
+  .c-top-loader__spinner {
+    @apply block h-full opacity-100 absolute right-0;
+    transform: rotate(3deg) translate(0px, -4px);
+    width: 100px;
+  }
+}

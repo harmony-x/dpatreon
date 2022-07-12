@@ -22,7 +22,7 @@ const LandingPageHeader: FC<LandingPageHeaderProps> = ({ setIsOpen }) => {
         </a>
       </Link>
       <nav className="flex items-center mt-3 md:mt-0">
-        <Link href="/">
+        <Link href="/create-post">
           <a
             onClick={() => {
               !active

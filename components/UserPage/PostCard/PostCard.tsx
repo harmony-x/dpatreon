@@ -2,6 +2,7 @@ import Button from "$components/Button/Button";
 import Like from "$svg/like";
 import Liked from "$svg/liked";
 import PostLockIcon from "$svg/post_lock_icon";
+import { useWeb3React } from "@web3-react/core";
 import { LikePost } from "actions";
 import Image from "next/image";
 import { FC } from "react";
@@ -19,6 +20,7 @@ const PostCard: FC<PostCardProps> = ({
   id,
   liked,
 }) => {
+  const { account } = useWeb3React();
   const queryClient = useQueryClient();
   const { data, isLoading, isError, mutate } = useMutation(
     "likePost",
@@ -66,7 +68,8 @@ const PostCard: FC<PostCardProps> = ({
             {locked ? null : (
               <button
                 onClick={() =>
-                  !liked && mutate({ creatorAddress: creatorId, postId: id })
+                  !liked &&
+                  mutate({ creatorAddress: account as string, postId: id })
                 }
               >
                 {liked ? <Liked /> : <Like />}

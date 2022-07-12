@@ -2,15 +2,12 @@ import Button from "$components/Button/Button";
 import Loading from "$components/Loading/Loading";
 import AccountDetails from "$components/UserPage/AccountDetails/AccountDetails";
 import ActionCard from "$components/UserPage/ActionCard/ActionCard";
-import ProfileCard from "$components/UserPage/ProfileCard/ProfileCard";
 import UserStats from "$components/UserPage/UserStats/UserStats";
 import MustConnect from "$components/Wrapper/MustConnect";
-import FeedPosts from "$layouts/FeedPosts/FeedPosts";
 import Footer from "$layouts/Footer/Footer";
 import TwoColumnLayout from "$layouts/TwoColumnLayout/TwoColumnLayout";
 import UserPageHeader from "$layouts/UserPageHeader/UserPageHeader";
 import UserFooterLogo from "$svg/user_footer_logo";
-import { truncateAddress } from "$utils/wallet";
 import { useWeb3React } from "@web3-react/core";
 import { getCreators, getPosts } from "actions";
 import type { NextPage } from "next";
@@ -26,7 +23,7 @@ const Dashboard: NextPage = () => {
   } = useQuery("creatorPosts", getPosts);
   const { account } = useWeb3React();
   const creator = data?.find((c) => c.creatorAddress === account);
-  const isPost = creatorPostsData?.find((c) => c.author === account);
+  const isPost = creatorPostsData?.some((c) => c.author === account);
 
   return (
     <div className="bg-white min-h-screen">
@@ -75,7 +72,7 @@ const Dashboard: NextPage = () => {
                                 <Button
                                   px="px-5"
                                   height="h-42px"
-                                  link="/create-post"
+                                  link="/my-page"
                                   text="View all posts"
                                   type="card2"
                                   className="w-max"

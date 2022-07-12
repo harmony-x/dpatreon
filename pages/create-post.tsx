@@ -1,5 +1,6 @@
 import Button from "$components/Button/Button";
 import Radio from "$components/Radio/Radio";
+import TierSelect from "$components/TierSelect/TierSelect";
 import CreatePost from "$components/UserPage/CreatePost/CreatePost";
 import MustConnect from "$components/Wrapper/MustConnect";
 import Footer from "$layouts/Footer/Footer";
@@ -13,6 +14,21 @@ import Head from "next/head";
 import React, { useState } from "react";
 import { useMutation, useQueryClient } from "react-query";
 
+const tiers = [
+  {
+    name: "Tier 1",
+    value: 0,
+  },
+  {
+    name: "Tier 2",
+    value: 1,
+  },
+  {
+    name: "Tier 3",
+    value: 2,
+  },
+];
+
 const CreatePostPage: NextPage = () => {
   const { account } = useWeb3React();
   const [postImageLoader, setPostImageLoader] = useState<boolean>(false);
@@ -20,6 +36,7 @@ const CreatePostPage: NextPage = () => {
   const [postTitle, setPostTitle] = useState<string>("");
   const [postDetails, setPostDetails] = useState<string>("");
   const [postTags, setPostTags] = useState<string[]>([]);
+  const [tier, setTier] = useState<{ name: string; value: number }>(tiers[0]);
   const [permission, setPermission] = useState<string>("public");
   const queryClient = useQueryClient();
   const { data, isLoading, isError, mutate } = useMutation("posts", postPost, {
@@ -47,7 +64,7 @@ const CreatePostPage: NextPage = () => {
           text: postTitle,
           image: postImage as string,
           tags: postTags.join("|"),
-          tier: permission === "public" ? -1 : 0,
+          tier: permission === "public" ? -1 : tier.value,
         },
         creatorAddress: account as string,
       });
@@ -108,7 +125,11 @@ const CreatePostPage: NextPage = () => {
                           {
                             component: (
                               <p className="text-base text-black font-normal">
-                                Patrons Only
+                                <TierSelect
+                                  options={tiers}
+                                  selected={tier}
+                                  setSelected={setTier}
+                                />
                               </p>
                             ),
                             value: "patrons",
