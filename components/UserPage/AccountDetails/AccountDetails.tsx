@@ -45,14 +45,16 @@ const AccountDetails: FC<AccountDetailsProps> = ({ walletAddress, link }) => {
       </div>
       <div className="px-7 flex items-center mt-11">
         <PolygonMatic />
-        <h4 className="flex flex-col items-center">
-          <span className="ml-3 uppercase font-semibold text-black text-2xl block mb-1">
-            {addressBalance} matic
-          </span>
-          <span className="text-base font-normal text-black text-opacity-60">
-            $ {(parseFloat(addressBalance) * 0.56).toFixed(2)} USD
-          </span>
-        </h4>
+        {addressBalance !== "Fetching..." && (
+          <h4 className="flex flex-col items-center">
+            <span className="ml-3 uppercase font-semibold text-black text-2xl block mb-1">
+              {addressBalance} matic
+            </span>
+            <span className="text-base font-normal text-black text-opacity-60">
+              $ {(parseFloat(addressBalance) * 0.56).toFixed(2)} USD
+            </span>
+          </h4>
+        )}
       </div>
     </article>
   );
