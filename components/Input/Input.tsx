@@ -43,7 +43,10 @@ export const Input: React.FC<InputProps> = ({
       className={`w-full md:w-3/4 bg-gray7 border-xs border-gray4 focus:border-primary focus:ring-2 focus:ring-gray4 text-sm md:text-base outline-none text-black text-opacity-60 ${px} ${height}`}
       onChange={onChange}
       onKeyDown={(e) => {
-        if (e.key === "Enter") onEnter && onEnter();
+        if (e.key === "Enter") {
+          e.preventDefault();
+          onEnter && onEnter();
+        }
       }}
       required={isRequired}
     />
