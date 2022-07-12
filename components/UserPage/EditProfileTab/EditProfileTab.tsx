@@ -2,12 +2,21 @@ import { FC, Fragment, useRef, useEffect, useState } from "react";
 import { Tab } from "@headlessui/react";
 import { EditProfileTabProps } from "./EditProfileTab.types";
 import Button from "$components/Button/Button";
+import { getCreators } from "actions";
+import { useQuery } from "react-query";
+import { useWeb3React } from "@web3-react/core";
+import { patreonContract } from "$utils/contracts";
 
 const EditProfileTab: FC<EditProfileTabProps> = ({
   leftTabPanel,
   rightTabPanel,
   middlePanel,
 }) => {
+  const { account, library } = useWeb3React();
+  const { data, isSuccess } = useQuery("creators", getCreators);
+  const launched =
+    isSuccess &&
+    data!.filter((creator) => creator.creatorAddress === account)[0].launched;
   return (
     <Tab.Group as="div" className="c-tab">
       <Tab.List className="border-opacity-20 border-b-gray3 border-b-xs flex justify-between">
@@ -56,11 +65,11 @@ const EditProfileTab: FC<EditProfileTabProps> = ({
         <Button
           px="px-7"
           height="h-9"
-          text="Launch"
+          text={launched ? "Launched" : "Launch"}
           type="primary"
-          className={`w-max bg-opacity-40 cursor-not-allowed mb-2`}
-          disabled={false}
-          onClick={() => {}}
+          className={`w-max mb-2` + (launched ? " bg-opacity-40" : "")}
+          disabled={launched}
+          onClick={async () => await patreonContract(library).launch()}
         />
       </Tab.List>
       <Tab.Panels>

@@ -3,9 +3,8 @@ import { Input } from "$components/Input/Input";
 import { TextArea } from "$components/TextArea/TextArea";
 import UploadImage from "$components/UploadImage/UploadImage";
 import { FileType } from "$types/userpage";
-import { patreonContract } from "$utils/contracts";
+import { subscriptionContract } from "$utils/contracts";
 import React, { useState } from "react";
-import { EditProfileHeading } from "../EditProfileHeading/EditProfileHeading";
 import { Form, Formik } from "formik";
 import { TierFormProps } from "./TierForm.types";
 import { useWeb3React } from "@web3-react/core";
@@ -43,7 +42,6 @@ export const TierForm: React.FC<TierFormProps> = ({
   id,
 }) => {
   const [tierImage, setTierImage] = useState<boolean>(false);
-  const [publishedState, setPublishedState] = useState<boolean>(published);
   const [tierBenefits, setTierBenefits] = useState<
     { name: string; id: number }[]
   >(
@@ -74,40 +72,51 @@ export const TierForm: React.FC<TierFormProps> = ({
           id,
           price,
           image,
-          published: publishedState,
+          published,
           title,
         };
-        setTiers(
-          [...tiers].map((item) => (item.id === id ? newTier : { ...item }))
-        );
-        // try {
-        //   console.log(values);
-        //   await patreonContract(library).fillBasics(
-        //     values.profilePhoto,
-        //     values.TierImage,
-        //     values.name,
-        //     values.isAreCreating,
-        //     values.about
-        //   );
-        // } catch (error) {
-        // } finally {
-        //   setSubmitting(false);
-        // }
+        setTiers(tiers.map((item) => (item.id === id ? newTier : { ...item })));
+        try {
+          console.log(values);
+          await subscriptionContract(library).setTier(id, {
+            published: newTier.published,
+            title: newTier.title,
+            description: newTier.description,
+            price: parseInt("" + newTier.price * 100),
+            image: newTier.image,
+            benefits: newTier.benefits,
+          });
+        } catch (error) {
+          alert("Could not save tier.");
+        } finally {
+          setSubmitting(false);
+        }
       }}
     >
       {({ values, setFieldValue }) => (
         <Form>
           <div className="w-full px-6 py-7 border-xs border-gray3 border-opacity-30">
-            <button className="mb-5 text-red underline text-opacity-80 text-xs text-right font-light flex flex-col">
-              {publishedState ? (
+            <button
+              type="button"
+              className="mb-5 text-red underline text-opacity-80 text-xs text-right font-light flex flex-col"
+            >
+              {published ? (
                 <span
                   className="text-right items-end"
-                  onClick={() => setPublishedState(false)}
+                  onClick={async () =>
+                    await subscriptionContract(library).setTierStatus(id, false)
+                  }
                 >
                   Unpublish
                 </span>
               ) : (
-                <span onClick={() => setPublishedState(true)}>Publish</span>
+                <span
+                  onClick={async () =>
+                    await subscriptionContract(library).setTierStatus(id, true)
+                  }
+                >
+                  Publish
+                </span>
               )}
             </button>
             <Input
@@ -288,15 +297,23 @@ export const TierForm: React.FC<TierFormProps> = ({
           />
         </div>
         <button className="mb-5 text-red underline text-opacity-80 text-xs text-right font-light flex flex-col w-max ml-2">
-          {publishedState ? (
+          {published ? (
             <span
               className="text-right items-end"
-              onClick={() => setPublishedState(false)}
+              onClick={async () =>
+                await subscriptionContract(library).setTierStatus(id, false)
+              }
             >
               Unpublish
             </span>
           ) : (
-            <span onClick={() => setPublishedState(true)}>Publish</span>
+            <span
+              onClick={async () =>
+                await subscriptionContract(library).setTierStatus(id, true)
+              }
+            >
+              Publish
+            </span>
           )}
         </button>
       </div>
